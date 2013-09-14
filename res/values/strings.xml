@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ClipVidva</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="math_category">คณิตศาสตร์ม.ปลาย</string>
+    <string name="askvidva_category">ถามวิศวะ</string>
+    <string name="subject_real_number">ระบบจำนวนจริง</string>
+    <string name="subject_conic_section">เรขาคณิตวิเคราะห์และภาคตัดกรวย</string>
+    <string name="subject_functions">ความสัมพันธ์และฟังก์ชัน</string>
+	
+    <string name="action_setting">action setting</string>
+    <string name="icon_video">&#xf03d;</string>
+    <string name="icon_pencil">&#xf040;</string>
+</resources>
