@@ -63,6 +63,7 @@
             android:layout_height="150dp"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
+            android:onClick="goToQuiz"
             android:layout_marginTop="200dp">
 
         <ImageView

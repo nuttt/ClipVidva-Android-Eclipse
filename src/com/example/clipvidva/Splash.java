@@ -1,9 +1,12 @@
 package com.example.clipvidva;
 
+import com.example.clipvidva.quizzes.QuizCategoryListActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
@@ -35,6 +38,14 @@ public class Splash extends Activity {
     public boolean goToCategory(View view){
         Intent intent = new Intent(this, CategoryListActivity.class);
         startActivity(intent);
+        return true;
+    }
+
+    public boolean goToQuiz(View view){
+    	Log.v(this.getClass().getName(), "Click the quiz button");
+        Intent intent = new Intent(this, QuizCategoryListActivity.class);
+        startActivity(intent);
+        Log.v(this.getClass().getName(), "Start quiz activity");
         return true;
     }
 }

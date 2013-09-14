@@ -3,7 +3,7 @@ package com.example.clipvidva.quizzes;
 /**
  * Created by nuttt on 12/9/13.
  */
-public class Quiz {
+public class Question {
     private int id;
     private int subject_id;
     private String question;
@@ -14,10 +14,10 @@ public class Quiz {
     private String description;
 
 
-    public Quiz() {
+    public Question() {
     }
 
-    public Quiz(int id, int subject_id, String question, String type, String choices, String answer, String hint, String description) {
+    public Question(int id, int subject_id, String question, String type, String choices, String answer, String hint, String description) {
         this.id = id;
         this.subject_id = subject_id;
         this.question = question;

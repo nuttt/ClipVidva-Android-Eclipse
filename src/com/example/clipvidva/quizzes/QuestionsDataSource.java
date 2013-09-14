@@ -17,7 +17,7 @@ import java.util.List;
  * Created by nuttt on 12/9/13.
  */
 
-public class QuizzesDataSource {
+public class QuestionsDataSource {
     private SQLiteDatabase database;
     private ClipVidvaDatabaseHelper dbHelper;
     private String[] allColumns = { ClipVidvaDatabaseHelper.QUIZ_COL_ID,
@@ -29,7 +29,7 @@ public class QuizzesDataSource {
             ClipVidvaDatabaseHelper.QUIZ_COL_HINT,
             ClipVidvaDatabaseHelper.QUIZ_COL_DESCRIPTION};
 
-    public QuizzesDataSource(Context context) {
+    public QuestionsDataSource(Context context) {
         dbHelper = new ClipVidvaDatabaseHelper(context);
     }
 
@@ -41,19 +41,19 @@ public class QuizzesDataSource {
         dbHelper.close();
     }
 
-    public List<Quiz> getAllQuizzesIn(String subject_id) {
+    public List<Question> getAllQuizzesIn(String subject_id) {
         return getAllQuizzesIn(Integer.parseInt(subject_id));
     }
 
-    public List<Quiz> getAllQuizzesIn(int subject_id) {
-        List<Quiz> quizzes = new ArrayList<Quiz>();
+    public List<Question> getAllQuizzesIn(int subject_id) {
+        List<Question> quizzes = new ArrayList<Question>();
         String where_clause = ClipVidvaDatabaseHelper.QUIZ_COL_SUBJECT + " = " + Integer.toString(subject_id);
         Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_QUIZZES,
                 allColumns, where_clause, null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Quiz quiz = cursorToQuiz(cursor);
+            Question quiz = cursorToQuiz(cursor);
             quizzes.add(quiz);
             cursor.moveToNext();
         }
@@ -61,8 +61,8 @@ public class QuizzesDataSource {
         cursor.close();
         return quizzes;
     }
-    private Quiz cursorToQuiz(Cursor cursor){
-        Quiz quiz = new Quiz();
+    private Question cursorToQuiz(Cursor cursor){
+        Question quiz = new Question();
         quiz.setId(cursor.getInt(0));
         quiz.setSubject_id(cursor.getInt(1));
         quiz.setQuestion(cursor.getString(2));

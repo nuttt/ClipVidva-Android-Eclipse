@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +65,26 @@ public class CategoriesDataSource {
         while (!cursor.isAfterLast()) {
             Category category = cursorToCategory(cursor);
             categories.add(category);
+            cursor.moveToNext();
+        }
+        // Make sure to close the cursor
+        cursor.close();
+        return categories;
+    }
+    
+
+    public List<Category> getAllQuizCategories() {
+        List<Category> categories = new ArrayList<Category>();
+        Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_CATEGORIES,
+                allColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Category category = cursorToCategory(cursor);
+            if(!category.getImg().equals("askeng")){
+            	Log.v(this.getClass().getName(), category.getImg());
+            	categories.add(category);
+            }
             cursor.moveToNext();
         }
         // Make sure to close the cursor

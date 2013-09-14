@@ -22,7 +22,8 @@
         </activity>
         <activity
                 android:name=".CategoryListActivity"
-                android:label="@string/app_name">
+                android:label="Categories"
+                android:parentActivityName=".Splash">
         </activity>
         <!-- <activity
             android:name=".CategoryListActivity"
@@ -35,14 +36,15 @@
         </activity> -->
         <activity
                 android:name="com.example.clipvidva.SubjectListActivity"
-                android:label="@string/app_name">
+                android:label="Subjects"
+                android:parentActivityName=".CategoryListActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value=".CategoryListActivity" />
         </activity>
         <activity
                 android:name="com.example.clipvidva.VideoListActivity"
-                android:label="@string/app_name">
+                android:label="Videos">
         </activity>
         <activity
             android:name="com.example.clipvidva.ItemDetailActivity"
@@ -52,7 +54,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ItemListActivity" />
         </activity>
-
+        
+        <!--  QUIZZES  -->
+        <activity
+                android:name="com.example.clipvidva.quizzes.QuizCategoryListActivity"
+                android:label="Quiz Categories"
+                android:parentActivityName=".Splash">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Splash" />
+        </activity>
+        <activity
+                android:name="com.example.clipvidva.quizzes.QuizSubjectListActivity"
+                android:label="Quiz Subjects"
+                android:parentActivityName="com.example.clipvidva.quizzes.QuizCategoryListActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.clipvidva.quizzes.QuizCategoryListActivity" />
+        </activity>
     </application>
 
 </manifest>
