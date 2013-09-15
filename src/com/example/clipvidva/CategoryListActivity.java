@@ -1,9 +1,12 @@
 package com.example.clipvidva;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewParent;
 
 public class CategoryListActivity extends FragmentActivity
         implements CategoryListFragment.Callbacks {
@@ -18,7 +21,7 @@ public class CategoryListActivity extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_item_list);
-
+        
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and

@@ -15,9 +15,17 @@
     <string name="close">ปิด</string>
     <string name="correct_title">ถูกต้อง!</string>
     <string name="correct_desc">กดเพื่อทำข้อถัดไป</string>
+    <string name="hint_button">ขอคำใบ้</string>
     <string name="incorrect_title">ยังไม่ถูก!</string>
     <string name="incorrect_desc">ลองตอบใหม่อีกครั้งนะ</string>
     <string name="try_again">กลับไปลองอีกครั้ง</string>
+    <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
+    
+    <!--  for debug purpose -->
+    <string name="choice_default">Choice</string>
+    <string name="question_default">Default Question</string>
+    <string name="result_default">Default Result</string>
+    <string name="hint_default">Default Hint</string>
 	
     <string name="action_setting">action setting</string>
     <string name="icon_video">&#xf03d;</string>

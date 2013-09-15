@@ -58,7 +58,7 @@ public class QuestionsDataSource {
         cursor.close();
         return quizzes;
     }
-    public Question getOneQuestion(String question_id, String subject_id){
+    public Question getOneQuestion(String subject_id, String question_id){
         String where_clause = ClipVidvaDatabaseHelper.QUIZ_COL_SUBJECT + " = " + subject_id + 
         					  " and " + ClipVidvaDatabaseHelper.QUIZ_COL_ID + " = " + question_id;
         Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_QUIZZES,
@@ -71,7 +71,7 @@ public class QuestionsDataSource {
         return question;
     }
     
-    public Question getOneQuestion(int question_id, int subject_id){
+    public Question getOneQuestion(int subject_id, int question_id){
     	return getOneQuestion(Integer.toString(question_id), Integer.toString(subject_id));
     }
     

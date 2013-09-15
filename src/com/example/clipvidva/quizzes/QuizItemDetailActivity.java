@@ -1,32 +1,16 @@
 package com.example.clipvidva.quizzes;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioButton;
 
-import com.example.clipvidva.CategoryListActivity;
-import com.example.clipvidva.ItemDetailFragment;
 import com.example.clipvidva.R;
 import com.example.clipvidva.Splash;
 
-/**
- * An activity representing a single Item detail screen. This
- * activity is only used on handset devices. On tablet-size devices,
- * item details are presented side-by-side with a list of items
- * in a {@link CategoryListActivity}.
- * <p>
- * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link ItemDetailFragment}.
- */
 public class QuizItemDetailActivity extends FragmentActivity {
-	
-	private int choice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

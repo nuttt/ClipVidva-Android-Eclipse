@@ -66,6 +66,7 @@ public class QuizSubjectListActivity extends FragmentActivity
             Intent detailIntent = new Intent(this, QuizItemDetailActivity.class);
             detailIntent.putExtra(QuizItemDetailFragment.ARG_ITEM_ID, id);
             detailIntent.putExtra(QuizItemDetailFragment.ARG_ITEM_NAME, name);
+            
             startActivity(detailIntent);
         }
     }
