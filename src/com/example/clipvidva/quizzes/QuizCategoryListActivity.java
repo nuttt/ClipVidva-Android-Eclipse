@@ -1,13 +1,12 @@
 package com.example.clipvidva.quizzes;
 
-import com.example.clipvidva.R;
-import com.example.clipvidva.SubjectListActivity;
-import com.example.clipvidva.SubjectListFragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+
+import com.example.clipvidva.CategoryListFragment;
+import com.example.clipvidva.R;
 
 public class QuizCategoryListActivity extends FragmentActivity
         implements QuizCategoryListFragment.Callbacks {
@@ -46,7 +45,7 @@ public class QuizCategoryListActivity extends FragmentActivity
      * indicating that the item with the given ID was selected.
      */
     @Override
-    public void onItemSelected(String id) {
+    public void onItemSelected(String id, String name) {
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
@@ -67,6 +66,7 @@ public class QuizCategoryListActivity extends FragmentActivity
             Intent detailIntent = new Intent(this, QuizSubjectListActivity.class);
             Log.v(this.getClass().getName(), "Put extra "+id);
             detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_ID, id);
+            detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_NAME, name);
             startActivity(detailIntent);
         }
     }

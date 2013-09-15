@@ -1,17 +1,14 @@
 package com.example.clipvidva.quizzes;
 
-import android.content.ContentValues;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.clipvidva.Category;
 import com.example.clipvidva.ClipVidvaDatabaseHelper;
-import com.example.clipvidva.Subject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by nuttt on 12/9/13.
@@ -61,6 +58,23 @@ public class QuestionsDataSource {
         cursor.close();
         return quizzes;
     }
+    public Question getOneQuestion(String question_id, String subject_id){
+        String where_clause = ClipVidvaDatabaseHelper.QUIZ_COL_SUBJECT + " = " + subject_id + 
+        					  " and " + ClipVidvaDatabaseHelper.QUIZ_COL_ID + " = " + question_id;
+        Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_QUIZZES,
+                allColumns, where_clause, null, null, null, null);
+
+        cursor.moveToFirst();
+        Question question = cursorToQuiz(cursor);
+        // Make sure to close the cursor
+        cursor.close();
+        return question;
+    }
+    
+    public Question getOneQuestion(int question_id, int subject_id){
+    	return getOneQuestion(Integer.toString(question_id), Integer.toString(subject_id));
+    }
+    
     private Question cursorToQuiz(Cursor cursor){
         Question quiz = new Question();
         quiz.setId(cursor.getInt(0));

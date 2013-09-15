@@ -1,5 +1,7 @@
 package com.example.clipvidva;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -7,11 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import com.example.clipvidva.dummy.DummyContent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A list fragment representing a list of Items. This fragment

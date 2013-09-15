@@ -8,6 +8,16 @@
     <string name="subject_real_number">ระบบจำนวนจริง</string>
     <string name="subject_conic_section">เรขาคณิตวิเคราะห์และภาคตัดกรวย</string>
     <string name="subject_functions">ความสัมพันธ์และฟังก์ชัน</string>
+    <string name="title_quiz">แบบฝึกหัด</string>
+    <string name="title_category">ดูวิดีโอ</string>
+    <string name="submit_text">ส่งคำตอบ</string>
+    <string name="next">ข้อถัดไป</string>
+    <string name="close">ปิด</string>
+    <string name="correct_title">ถูกต้อง!</string>
+    <string name="correct_desc">กดเพื่อทำข้อถัดไป</string>
+    <string name="incorrect_title">ยังไม่ถูก!</string>
+    <string name="incorrect_desc">ลองตอบใหม่อีกครั้งนะ</string>
+    <string name="try_again">กลับไปลองอีกครั้ง</string>
 	
     <string name="action_setting">action setting</string>
     <string name="icon_video">&#xf03d;</string>

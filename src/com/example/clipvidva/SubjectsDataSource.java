@@ -1,13 +1,12 @@
 package com.example.clipvidva;
 
-import android.content.ContentValues;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Vee on 8/9/2556.

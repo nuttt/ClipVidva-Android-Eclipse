@@ -58,7 +58,7 @@
         <!--  QUIZZES  -->
         <activity
                 android:name="com.example.clipvidva.quizzes.QuizCategoryListActivity"
-                android:label="Quiz Categories"
+                android:label="@string/title_quiz"
                 android:parentActivityName=".Splash">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
@@ -71,6 +71,14 @@
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.clipvidva.quizzes.QuizCategoryListActivity" />
+        </activity>
+        <activity
+                android:name="com.example.clipvidva.quizzes.QuizItemDetailActivity"
+                android:label="Question"
+                android:parentActivityName="com.example.clipvidva.quizzes.QuizSubjectListActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.clipvidva.quizzes.QuizSubjectListActivity" />
         </activity>
     </application>
 

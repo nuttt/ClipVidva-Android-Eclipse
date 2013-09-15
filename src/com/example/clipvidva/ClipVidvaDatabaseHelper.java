@@ -36,7 +36,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String QUIZ_COL_DESCRIPTION = "description";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 16;
 
     private Context context;
 
@@ -59,7 +59,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
             + VIDEO_COL_SUBJECT + " integer not null);";
     private static final String QUIZZES_CREATE = "create table "
             + TABLE_QUIZZES + "("
-            + QUIZ_COL_ID + " integer primary key autoincrement, "
+            + QUIZ_COL_ID + " integer not null, "
             + QUIZ_COL_SUBJECT + " integer not null, "
             + QUIZ_COL_QUESTION + " text not null, "
             + QUIZ_COL_TYPE + " text not null, "
@@ -97,8 +97,9 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("INSERT INTO videos VALUES(4,'Conic Video 1','conic123', 2);");
         database.execSQL("INSERT INTO videos VALUES(5,'Conic Video 2','conic223', 2);");
         // Question
-        database.execSQL("INSERT INTO quizzes VALUES(1, 1, 'Real Question', 'text', '', '1', '', 'description goes here');");
-        database.execSQL("INSERT INTO quizzes VALUES(2, 1, '22 Real Question 2', 'text', '', '2', '', 'description goes here 22');");
+        database.execSQL("INSERT INTO quizzes VALUES(1, 1, 'Real Question', 'choices', '15a + b|a*b*c + 2|3d + 4|a', '1', 'this is the hint', 'description goes here');");
+        database.execSQL("INSERT INTO quizzes VALUES(2, 1, 'Real Question', 'text', '', '1', '', 'description goes here');");
+        database.execSQL("INSERT INTO quizzes VALUES(1, 2, 'Conic 1', 'text', '', '2', '', 'description goes here 22');");
     }
 
     @Override

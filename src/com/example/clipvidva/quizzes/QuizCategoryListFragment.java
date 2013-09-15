@@ -53,7 +53,7 @@ public class QuizCategoryListFragment extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String id);
+        public void onItemSelected(String id, String name);
     }
 
     /**
@@ -62,7 +62,7 @@ public class QuizCategoryListFragment extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(String id, String name) {
         }
     };
 
@@ -137,7 +137,9 @@ public class QuizCategoryListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(Integer.toString(categories.get(position).getId()));
+        String sId = Integer.toString(categories.get(position).getId());
+        String sName = categories.get(position).getName();
+        mCallbacks.onItemSelected(sId, sName);
         Log.v(this.getClass().getName(), "Clicked category!");
     }
 

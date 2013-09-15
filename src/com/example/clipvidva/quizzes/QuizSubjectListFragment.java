@@ -14,7 +14,6 @@ import com.example.clipvidva.ItemDetailFragment;
 import com.example.clipvidva.R;
 import com.example.clipvidva.Subject;
 import com.example.clipvidva.SubjectsDataSource;
-import com.example.clipvidva.VideoListFragment;
 
 /**
  * A list fragment representing a list of Items. This fragment
@@ -45,6 +44,7 @@ public class QuizSubjectListFragment extends ListFragment {
     private int mActivatedPosition = ListView.INVALID_POSITION;
     private List<Subject> subjects;
     public static final String ARG_ITEM_ID = "item_id";
+    public static final String ARG_ITEM_NAME = "item_name";
 
     /**
      * A callback interface that all activities containing this fragment must
@@ -55,7 +55,7 @@ public class QuizSubjectListFragment extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String id);
+        public void onItemSelected(String id, String name);
     }
 
     /**
@@ -64,7 +64,7 @@ public class QuizSubjectListFragment extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(String id, String name) {
         }
     };
 
@@ -78,12 +78,20 @@ public class QuizSubjectListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        String id = getActivity().getIntent().getExtras().getString(VideoListFragment.ARG_ITEM_ID);
+        
+        Bundle extras = getActivity().getIntent().getExtras();
+        String id = extras.getString(ARG_ITEM_ID);
+        String name = extras.getString(ARG_ITEM_NAME);
+        Log.v(this.getClass().getName(), "ITEM_NAME "+name);
+        
+        // Set title bar
+        ((QuizSubjectListActivity)getActivity()).setActionBarTitle(name);
+        
         SubjectsDataSource subjectsDataSource = new SubjectsDataSource(getActivity());
         subjectsDataSource.open();
         subjects = subjectsDataSource.getAllSubjectsIn(id);
         Log.v(this.getClass().getName(), id);
+        
         setListAdapter(new ArrayAdapter<Subject>(
                 getActivity(),
                 R.layout.subject_item,
@@ -130,8 +138,11 @@ public class QuizSubjectListFragment extends ListFragment {
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
         //mCallbacks.onItemSelected(Integer.toString(categories.get(position).getId()));
-        mCallbacks.onItemSelected(Integer.toString(subjects.get(position).getId()));
-        Log.v(this.getClass().getName(), "Clicked subject!");
+
+        String sId = Integer.toString(subjects.get(position).getId());
+        String sName = subjects.get(position).getName();
+        mCallbacks.onItemSelected(sId, sName);
+        Log.v(this.getClass().getName(), "Clicked subject named "+ sName);        
     }
 
     @Override
