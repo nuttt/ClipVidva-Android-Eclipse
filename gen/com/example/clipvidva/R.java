@@ -36,13 +36,13 @@ public final class R {
         public static final int category_item_image=0x7f090002;
         public static final int category_item_list=0x7f090006;
         public static final int category_item_text=0x7f090003;
-        public static final int choice1=0x7f09000a;
-        public static final int choice2=0x7f09000b;
-        public static final int choice3=0x7f09000c;
-        public static final int choice4=0x7f09000d;
-        public static final int choices=0x7f090009;
-        public static final int hint=0x7f090008;
-        public static final int hint_button=0x7f09000f;
+        public static final int choice1=0x7f090009;
+        public static final int choice2=0x7f09000a;
+        public static final int choice3=0x7f09000b;
+        public static final int choice4=0x7f09000c;
+        public static final int choices=0x7f090008;
+        public static final int hint=0x7f09000d;
+        public static final int hint_button=0x7f090010;
         public static final int imageView=0x7f090012;
         public static final int imageView2=0x7f090013;
         public static final int item_detail=0x7f090005;
@@ -51,14 +51,14 @@ public final class R {
         public static final int question_title=0x7f090007;
         public static final int quiz_category_item_list=0x7f090004;
         public static final int quiz_subject_item_list=0x7f090011;
-        public static final int result=0x7f090010;
+        public static final int result=0x7f09000e;
         public static final int splash_exam_icon=0x7f090016;
         public static final int splash_exam_text=0x7f090017;
         public static final int splash_watch_clip_icon=0x7f090014;
         public static final int splash_watch_clip_text=0x7f090015;
         public static final int subject_item_list=0x7f090019;
         public static final int subject_item_text=0x7f090018;
-        public static final int submit_button=0x7f09000e;
+        public static final int submit_button=0x7f09000f;
         public static final int video_item_list=0x7f09001b;
         public static final int video_item_text=0x7f09001a;
     }

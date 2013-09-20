@@ -100,6 +100,7 @@ public class QuizItemDetailFragment extends Fragment {
 	        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
 
 	        // Radio Listener
+	       
 	        RadioGroup choiceGroup = (RadioGroup) rootView.findViewById(R.id.choices);
 	        for (int i = 0; i < choiceGroup.getChildCount(); i++) {
 	            ((RadioButton) choiceGroup.getChildAt(i)).setOnClickListener(new QuizRadioButtonOnClickListener());
