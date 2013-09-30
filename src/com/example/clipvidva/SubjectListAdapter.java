@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CategoriesListAdapter extends myListAdapter<Category> {
+public class SubjectListAdapter extends myListAdapter<Subject> {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -24,14 +24,14 @@ public class CategoriesListAdapter extends myListAdapter<Category> {
         }
 
 
-        Category category = container.get(i);
+        Subject subject = container.get(i);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.category_item_image);
-        int imageID = context.getResources().getIdentifier(category.getImg(), "drawable", context.getPackageName());
+        int imageID = context.getResources().getIdentifier(subject.getImg(), "drawable", context.getPackageName());
         imageView.setImageResource(imageID);
 
         TextView textView = (TextView) view.findViewById(R.id.category_item_text);
-        textView.setText(category.getName());
+        textView.setText(subject.getName());
 
         Typeface font_text = Typeface.createFromAsset(context.getAssets(), "fonts/RSU_Regular.ttf");
         textView.setTypeface(font_text);

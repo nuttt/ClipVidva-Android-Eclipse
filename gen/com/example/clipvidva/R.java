@@ -56,8 +56,8 @@ public final class R {
         public static final int splash_exam_text=0x7f090017;
         public static final int splash_watch_clip_icon=0x7f090014;
         public static final int splash_watch_clip_text=0x7f090015;
-        public static final int subject_item_list=0x7f090019;
         public static final int subject_item_text=0x7f090018;
+        public static final int subject_list_view=0x7f090019;
         public static final int submit_button=0x7f09000f;
         public static final int video_item_list=0x7f09001b;
         public static final int video_item_text=0x7f09001a;
