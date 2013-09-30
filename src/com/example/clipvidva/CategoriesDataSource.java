@@ -56,8 +56,8 @@ public class CategoriesDataSource {
                 + " = " + id, null);
     }
 
-    public List<Category> getAllCategories() {
-        List<Category> categories = new ArrayList<Category>();
+    public ArrayList<Category> getAllCategories() {
+        ArrayList<Category> categories = new ArrayList<Category>();
         Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_CATEGORIES,
                 allColumns, null, null, null, null, null);
 

@@ -33,8 +33,8 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f09001c;
+        public static final int categories_list_view=0x7f090004;
         public static final int category_item_image=0x7f090002;
-        public static final int category_item_list=0x7f090006;
         public static final int category_item_text=0x7f090003;
         public static final int choice1=0x7f090009;
         public static final int choice2=0x7f09000a;
@@ -49,7 +49,7 @@ public final class R {
         public static final int item_detail_container=0x7f090000;
         public static final int item_list=0x7f090001;
         public static final int question_title=0x7f090007;
-        public static final int quiz_category_item_list=0x7f090004;
+        public static final int quiz_category_item_list=0x7f090006;
         public static final int quiz_subject_item_list=0x7f090011;
         public static final int result=0x7f09000e;
         public static final int splash_exam_icon=0x7f090016;
