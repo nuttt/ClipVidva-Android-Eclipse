@@ -7,7 +7,7 @@
     android:padding="20dp" >
 
     <ImageView
-        android:id="@+id/myImageView"
+        android:id="@+id/iconView"
         android:contentDescription="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,10 +17,10 @@
         android:id="@+id/quiz_question_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/myImageView"
-        android:layout_alignTop="@+id/myImageView"
-        android:layout_alignRight="@+id/myImageView"
-        android:layout_alignBottom="@+id/myImageView"
+        android:layout_alignLeft="@+id/iconView"
+        android:layout_alignTop="@+id/iconView"
+        android:layout_alignRight="@+id/iconView"
+        android:layout_alignBottom="@+id/iconView"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="#ffcc0000" />

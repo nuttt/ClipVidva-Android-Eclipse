@@ -57,12 +57,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fullscreen_content_controls=0x7f090003;
         public static final int hint=0x7f090010;
         public static final int hint_button=0x7f090013;
+        public static final int iconView=0x7f090015;
         public static final int imageView=0x7f090019;
         public static final int imageView2=0x7f09001a;
         public static final int item_detail=0x7f090007;
         public static final int item_detail_container=0x7f090000;
         public static final int item_list=0x7f090001;
-        public static final int myImageView=0x7f090015;
         public static final int question_title=0x7f09000a;
         public static final int quiz_category_item_list=0x7f090009;
         public static final int quiz_question_grid=0x7f090017;

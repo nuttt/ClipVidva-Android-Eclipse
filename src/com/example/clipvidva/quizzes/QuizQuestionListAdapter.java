@@ -1,15 +1,16 @@
 package com.example.clipvidva.quizzes;
 
 
-import com.example.clipvidva.MyListAdapter;
-import com.example.clipvidva.R;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.clipvidva.MyListAdapter;
+import com.example.clipvidva.R;
 
 public class QuizQuestionListAdapter extends MyListAdapter<UserAnswer> {
 
@@ -26,10 +27,14 @@ public class QuizQuestionListAdapter extends MyListAdapter<UserAnswer> {
         UserAnswer userAnswer = container.get(i);
 
         TextView textView = (TextView) view.findViewById(R.id.quiz_question_id);
-        if(textView == null){
-        	Log.v(this.getClass().getName(), "TextView Null");
-        }
+        ImageView iconView = (ImageView) view.findViewById(R.id.iconView);
         textView.setText(Integer.toString(userAnswer.getQuestion_id()));
+        Log.v(this.getClass().getName(), "Result: "+userAnswer.getResult());
+        if(userAnswer.getResult().equals("Correct")){
+        	iconView.setImageResource(R.drawable.grid_item_correct);
+        	Log.v(this.getClass().getName(), "Change to correct");
+        	iconView.postInvalidate();
+        }
 
         return view;
     }

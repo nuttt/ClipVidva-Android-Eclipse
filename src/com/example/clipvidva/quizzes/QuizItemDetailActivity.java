@@ -180,6 +180,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
 		intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_ID, subject_id+"");
 		Log.v(this.getClass().getName(), "Put all extras "+nextQuestionNo);
 		startActivity(intent);
+		finish();
 		Log.v(this.getClass().getName(), "Start intent");
     }
 

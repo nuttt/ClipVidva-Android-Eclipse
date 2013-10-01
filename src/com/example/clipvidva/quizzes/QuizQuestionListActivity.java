@@ -17,13 +17,14 @@ import com.example.clipvidva.R;
 public class QuizQuestionListActivity extends Activity {
 	private UserAnswersDataSource userAnswersDataSource;
 	private QuizQuestionListAdapter quizQuestionListAdapter;
+	private List<UserAnswer> userAnswers;
 	private String subject_id;
 	private String subject_name;
+	private GridView gridView;
 	public static final String SUBJECT_NAME = "subject_name";
 	public static final String SUBJECT_ID = "subject_id";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.quiz_question_list);
 		
@@ -36,21 +37,21 @@ public class QuizQuestionListActivity extends Activity {
 		
 		userAnswersDataSource = new UserAnswersDataSource(getApplicationContext());
 		userAnswersDataSource.open();
-
-		List<UserAnswer> userAnswers = userAnswersDataSource.getAllAnswersIn(subject_id);
-		
+	    gridView = (GridView) findViewById(R.id.quiz_question_grid);
+        
+	}
+	
+	protected void onResume(){
+		super.onResume();
 		quizQuestionListAdapter = new QuizQuestionListAdapter();
-		
-	    GridView gridView = (GridView) findViewById(R.id.quiz_question_grid);
-	    gridView.setAdapter(quizQuestionListAdapter);
-	    gridView.setOnItemClickListener(new QuestionItemClickListener());
+		userAnswers = userAnswersDataSource.getAllAnswersIn(subject_id);
+		Log.v(this.getClass().getName(), "Resume Activity");
 	    for(int i=0; i<userAnswers.size(); i++){
 	    	quizQuestionListAdapter.addItem(userAnswers.get(i));
 	    }
-	    
+	    gridView.setAdapter(quizQuestionListAdapter);	
+	    gridView.setOnItemClickListener(new QuestionItemClickListener());    
 	    quizQuestionListAdapter.notifyDataSetChanged();
-	    gridView.setOnItemClickListener(new QuestionItemClickListener());
-        
 	}
 	
 	private void setTitle(String title){
@@ -59,6 +60,7 @@ public class QuizQuestionListActivity extends Activity {
         	actionBar.setTitle(title);
         }
 	}
+	
 	
 	private class QuestionItemClickListener implements OnItemClickListener{
 
