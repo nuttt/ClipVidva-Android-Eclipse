@@ -24,12 +24,13 @@ public class CorrectDialogFragment extends DialogFragment {
         	   .setMessage(description)
                .setPositiveButton(R.string.next, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                	   Log.v(this.getClass().getName(), "Click Yes!");
+                	   Log.v(this.getClass().getName(), "Click Next!");
+                	   ((QuizItemDetailActivity)getActivity()).getNextQuestion();
                    }
                })
                .setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                	   Log.v(this.getClass().getName(), "Click No!");
+                	   Log.v(this.getClass().getName(), "Click Close!");
                    }
                });
         // Create the AlertDialog object and return it

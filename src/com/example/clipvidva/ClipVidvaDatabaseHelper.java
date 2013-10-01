@@ -41,7 +41,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_ANSWERS_COL_RESULT = "result";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 21;
+    private static final int DATABASE_VERSION = 22;
 
     private Context context;
 
@@ -119,13 +119,13 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         // Question
         database.execSQL("INSERT INTO quizzes VALUES(1, 1, 'Real Question', 'choices', '15a + b|a*b*c + 2|3d + 4|a', '1', 'this is the hint', 'description goes here');");
         database.execSQL("INSERT INTO quizzes VALUES(1, 2, 'Real Question q2', 'choices', 'c1|cc2|ccc3|cccc4', '1', 'this is the hint', 'description goes here again');");
-        database.execSQL("INSERT INTO quizzes VALUES(1, 3, 'Real Question', 'text', '', '1', '', 'description goes here');");
+        //database.execSQL("INSERT INTO quizzes VALUES(1, 3, 'Real Question', 'text', '', '1', '', 'description goes here');");
         database.execSQL("INSERT INTO quizzes VALUES(2, 1, 'Conic 1', 'choices', 'c1|c2|c3|c4', '2', 'hint hint hint!', 'description goes here 22');");
         database.execSQL("INSERT INTO quizzes VALUES(3, 1, 'Function No 1', 'choices', 'ffff1|f 2|f f  3|ff 4', '4', '', 'description goes here for function');");
         // User Answers
         database.execSQL("INSERT INTO user_answers VALUES(1, 1, '', '');");
         database.execSQL("INSERT INTO user_answers VALUES(1, 2, '', '');");
-        database.execSQL("INSERT INTO user_answers VALUES(1, 3, '', '');");
+        //database.execSQL("INSERT INTO user_answers VALUES(1, 3, '', '');");
         database.execSQL("INSERT INTO user_answers VALUES(2, 1, '', '');");
         database.execSQL("INSERT INTO user_answers VALUES(3, 1, '', '');");
     }

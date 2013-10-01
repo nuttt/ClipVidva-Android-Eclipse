@@ -32,7 +32,7 @@ public final class R {
         public static final int splash_button=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001e;
+        public static final int action_settings=0x7f090020;
         public static final int categories_list_view=0x7f090004;
         public static final int category_item_image=0x7f090002;
         public static final int category_item_text=0x7f090003;
@@ -43,26 +43,28 @@ public final class R {
         public static final int choices=0x7f090009;
         public static final int hint=0x7f09000e;
         public static final int hint_button=0x7f090011;
-        public static final int imageView=0x7f090013;
-        public static final int imageView2=0x7f090014;
+        public static final int imageView=0x7f090015;
+        public static final int imageView2=0x7f090016;
         public static final int item_detail=0x7f090005;
         public static final int item_detail_container=0x7f090000;
         public static final int item_list=0x7f090001;
         public static final int question_title=0x7f090008;
         public static final int quiz_category_item_list=0x7f090007;
-        public static final int quiz_subject_item_list=0x7f090012;
+        public static final int quiz_question_grid=0x7f090013;
+        public static final int quiz_question_id=0x7f090012;
+        public static final int quiz_subject_item_list=0x7f090014;
         public static final int result=0x7f09000f;
-        public static final int splash_exam_icon=0x7f090017;
-        public static final int splash_exam_text=0x7f090018;
-        public static final int splash_watch_clip_icon=0x7f090015;
-        public static final int splash_watch_clip_text=0x7f090016;
+        public static final int splash_exam_icon=0x7f090019;
+        public static final int splash_exam_text=0x7f09001a;
+        public static final int splash_watch_clip_icon=0x7f090017;
+        public static final int splash_watch_clip_text=0x7f090018;
         public static final int subject_detail=0x7f090006;
-        public static final int subject_item_text=0x7f090019;
-        public static final int subject_list_view=0x7f09001a;
+        public static final int subject_item_text=0x7f09001b;
+        public static final int subject_list_view=0x7f09001c;
         public static final int submit_button=0x7f090010;
-        public static final int videoView=0x7f09001d;
-        public static final int video_item_list=0x7f09001c;
-        public static final int video_item_text=0x7f09001b;
+        public static final int videoView=0x7f09001f;
+        public static final int video_item_list=0x7f09001e;
+        public static final int video_item_text=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_item_detail=0x7f030000;
@@ -74,13 +76,15 @@ public final class R {
         public static final int quiz_category_item_list=0x7f030006;
         public static final int quiz_fragment_item_detail=0x7f030007;
         public static final int quiz_item_detail=0x7f030008;
-        public static final int quiz_subject_item_list=0x7f030009;
-        public static final int splash=0x7f03000a;
-        public static final int subject_item=0x7f03000b;
-        public static final int subject_item_list=0x7f03000c;
-        public static final int video_item=0x7f03000d;
-        public static final int video_item_list=0x7f03000e;
-        public static final int video_viewer=0x7f03000f;
+        public static final int quiz_question_item_list=0x7f030009;
+        public static final int quiz_question_list=0x7f03000a;
+        public static final int quiz_subject_item_list=0x7f03000b;
+        public static final int splash=0x7f03000c;
+        public static final int subject_item=0x7f03000d;
+        public static final int subject_item_list=0x7f03000e;
+        public static final int video_item=0x7f03000f;
+        public static final int video_item_list=0x7f030010;
+        public static final int video_viewer=0x7f030011;
     }
     public static final class menu {
         public static final int main=0x7f080000;
