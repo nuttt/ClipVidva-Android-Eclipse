@@ -1,5 +1,8 @@
 package com.example.clipvidva.quizzes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -52,6 +55,27 @@ public class UserAnswersDataSource {
         UserAnswer userAnswer = cursorToUserAnswer(cursor);
         cursor.close();
         return userAnswer;
+    }
+
+    public List<UserAnswer> getAllAnswersIn(String subject_id) {
+        return getAllAnswersIn(Integer.parseInt(subject_id));
+    }
+
+    public List<UserAnswer> getAllAnswersIn(int subject_id) {
+        List<UserAnswer> userAnswers = new ArrayList<UserAnswer>();
+        String where_clause = ClipVidvaDatabaseHelper.USER_ANSWERS_COL_SUBJECT_ID + " = " + Integer.toString(subject_id);
+        Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_USER_ANSWERS,
+                allColumns, where_clause, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            UserAnswer userAnswer = cursorToUserAnswer(cursor);
+            userAnswers.add(userAnswer);
+            cursor.moveToNext();
+        }
+        // Make sure to close the cursor
+        cursor.close();
+        return userAnswers;
     }
 
     public UserAnswer getUserAnswer(int subject_id, int question_id) {

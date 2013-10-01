@@ -8,6 +8,7 @@
     android:verticalSpacing="10dp"
     android:horizontalSpacing="10dp"
     android:stretchMode="columnWidth"
+    android:background="@drawable/wood_pattern"
     android:gravity="center" >
     
 

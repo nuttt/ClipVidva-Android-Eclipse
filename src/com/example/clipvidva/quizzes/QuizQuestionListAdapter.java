@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class QuizQuestionListAdapter extends MyListAdapter<Question> {
+public class QuizQuestionListAdapter extends MyListAdapter<UserAnswer> {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -23,13 +23,13 @@ public class QuizQuestionListAdapter extends MyListAdapter<Question> {
             view = inflate.inflate(R.layout.quiz_question_item_list, viewGroup, false);
         }
         
-        Question question = container.get(i);
+        UserAnswer userAnswer = container.get(i);
 
         TextView textView = (TextView) view.findViewById(R.id.quiz_question_id);
         if(textView == null){
         	Log.v(this.getClass().getName(), "TextView Null");
         }
-        textView.setText(Integer.toString(question.getId()));
+        textView.setText(Integer.toString(userAnswer.getQuestion_id()));
 
         return view;
     }

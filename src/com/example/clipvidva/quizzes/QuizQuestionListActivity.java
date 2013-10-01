@@ -15,7 +15,7 @@ import android.widget.GridView;
 import com.example.clipvidva.R;
 
 public class QuizQuestionListActivity extends Activity {
-	private QuestionsDataSource questionsDataSource;
+	private UserAnswersDataSource userAnswersDataSource;
 	private QuizQuestionListAdapter quizQuestionListAdapter;
 	private String subject_id;
 	private String subject_name;
@@ -34,18 +34,18 @@ public class QuizQuestionListActivity extends Activity {
 		// Set Title Bar
 		setTitle(subject_name);
 		
-		questionsDataSource = new QuestionsDataSource(getApplicationContext());
-		questionsDataSource.open();
+		userAnswersDataSource = new UserAnswersDataSource(getApplicationContext());
+		userAnswersDataSource.open();
 
-		List<Question> questions = questionsDataSource.getAllQuizzesIn(subject_id);
+		List<UserAnswer> userAnswers = userAnswersDataSource.getAllAnswersIn(subject_id);
 		
 		quizQuestionListAdapter = new QuizQuestionListAdapter();
 		
 	    GridView gridView = (GridView) findViewById(R.id.quiz_question_grid);
 	    gridView.setAdapter(quizQuestionListAdapter);
 	    gridView.setOnItemClickListener(new QuestionItemClickListener());
-	    for(int i=0; i<questions.size(); i++){
-	    	quizQuestionListAdapter.addItem(questions.get(i));
+	    for(int i=0; i<userAnswers.size(); i++){
+	    	quizQuestionListAdapter.addItem(userAnswers.get(i));
 	    }
 	    
 	    quizQuestionListAdapter.notifyDataSetChanged();
@@ -65,12 +65,12 @@ public class QuizQuestionListActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int question_id,
 				long arg3) {
-			Question questionClicked = quizQuestionListAdapter.getItem(question_id);
+			UserAnswer questionClicked = quizQuestionListAdapter.getItem(question_id);
 			Intent intent = new Intent(getApplicationContext(), QuizItemDetailActivity.class);
-			intent.putExtra(QuizItemDetailActivity.ARG_ITEM_ID, questionClicked.getId()+"");
+			intent.putExtra(QuizItemDetailActivity.ARG_ITEM_ID, questionClicked.getQuestion_id()+"");
 			intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_NAME, subject_name);
 			intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_ID, subject_id+"");
-			Log.v(this.getClass().getName(), "Put all extras "+questionClicked.getId());
+			Log.v(this.getClass().getName(), "Put all extras "+questionClicked.getQuestion_id());
 			startActivity(intent);
 			Log.v(this.getClass().getName(), "Start intent");
 		}
