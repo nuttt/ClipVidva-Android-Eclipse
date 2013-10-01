@@ -31,12 +31,12 @@ public class SubjectsDataSource {
         dbHelper.close();
     }
 
-    public List<Subject> getAllSubjectsIn(String category_id) {
+    public ArrayList<Subject> getAllSubjectsIn(String category_id) {
         return getAllSubjectsIn(Integer.parseInt(category_id));
     }
 
-    public List<Subject> getAllSubjectsIn(int category_id) {
-        List<Subject> subjects = new ArrayList<Subject>();
+    public ArrayList<Subject> getAllSubjectsIn(int category_id) {
+        ArrayList<Subject> subjects = new ArrayList<Subject>();
         String where_clause = ClipVidvaDatabaseHelper.SUBJECT_COL_CATEGORY + " = " + Integer.toString(category_id);
         Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_SUBJECTS,
                 allColumns, where_clause, null, null, null, null);

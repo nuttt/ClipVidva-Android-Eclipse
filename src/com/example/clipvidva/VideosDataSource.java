@@ -1,12 +1,12 @@
 package com.example.clipvidva;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 /**
  * Created by Vee on 8/9/2556.
@@ -31,17 +31,34 @@ public class VideosDataSource {
     public void close() {
         dbHelper.close();
     }
-
-    public List<Video> getAllVideosIn(String subject_id) {
-        return getAllVideosIn(Integer.parseInt(subject_id));
-    }
-
-    public List<Video> getAllVideosIn(int subject_id) {
-        List<Video> videos = new ArrayList<Video>();
+    
+    private Cursor dbConnect(int subject_id){
+    	Log.v("nut", subject_id+"");
         String where_clause = ClipVidvaDatabaseHelper.VIDEO_COL_SUBJECT + " = " + Integer.toString(subject_id);
+        open();
         Cursor cursor = database.query(ClipVidvaDatabaseHelper.TABLE_VIDEOS,
                 allColumns, where_clause, null, null, null, null);
+        return cursor;
+    }
 
+    public ArrayList<Video> getAllVideosIn(String subject_id) {
+        return getAllVideosIn(Integer.parseInt(subject_id));
+    }
+    
+    public int getVideosNum(String subject_id){
+    	return getVideosNum(Integer.parseInt(subject_id));
+    }
+    
+    public int getVideosNum(int subject_id) {
+        Cursor cursor = dbConnect(subject_id);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public ArrayList<Video> getAllVideosIn(int subject_id) {
+        ArrayList<Video> videos = new ArrayList<Video>();
+        Cursor cursor = dbConnect(subject_id);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Video video = cursorToVideo(cursor);

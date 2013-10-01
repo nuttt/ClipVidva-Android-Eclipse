@@ -20,14 +20,20 @@
     <string name="incorrect_desc">ลองตอบใหม่อีกครั้งนะ</string>
     <string name="try_again">กลับไปลองอีกครั้ง</string>
     <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
-    
-    <!--  for debug purpose -->
+
+    <!-- for debug purpose -->
     <string name="choice_default">Choice</string>
     <string name="question_default">Default Question</string>
     <string name="result_default">Default Result</string>
     <string name="hint_default">Default Hint</string>
-	
     <string name="action_setting">action setting</string>
     <string name="icon_video">&#xf03d;</string>
     <string name="icon_pencil">&#xf040;</string>
+    <string name="subject_askeng_cp">วิศวกรรมคอมพิวเตอร์</string>
+    <string name="title_subject_list">Subjects</string>
+    <string name="title_subject_detail">Subject Detail</string>
+    <string name="title_activity_video_viewer">VideoViewer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

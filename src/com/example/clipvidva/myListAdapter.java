@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public abstract class myListAdapter<T> extends BaseAdapter {
+public abstract class MyListAdapter<T> extends BaseAdapter {
 
     protected ArrayList<T> container;
 
-    public myListAdapter() {
+    public MyListAdapter() {
         container = new ArrayList<T>();
     }
 

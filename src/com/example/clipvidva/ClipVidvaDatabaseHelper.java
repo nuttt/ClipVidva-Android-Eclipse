@@ -41,7 +41,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_ANSWERS_COL_RESULT = "result";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 19;
+    private static final int DATABASE_VERSION = 21;
 
     private Context context;
 
@@ -102,6 +102,9 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("INSERT INTO subjects VALUES(1,'" + context.getResources().getString(R.string.subject_real_number) + "', 1);");
         database.execSQL("INSERT INTO subjects VALUES(2,'" + context.getResources().getString(R.string.subject_conic_section) + "', 1);");
         database.execSQL("INSERT INTO subjects VALUES(3,'" + context.getResources().getString(R.string.subject_functions) + "', 1);");
+        // Subjects for Askeng category
+        database.execSQL("INSERT INTO subjects VALUES(4,'" + context.getResources().getString(R.string.subject_askeng_cp) + "', 2);");
+        
         // Videos for Real Number
         database.execSQL("INSERT INTO videos VALUES(1,'Video 1','real123', 1);");
         database.execSQL("INSERT INTO videos VALUES(2,'Video 2','real223', 1);");
@@ -109,6 +112,10 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         // Videos for Conic Section
         database.execSQL("INSERT INTO videos VALUES(4,'Conic Video 1','conic123', 2);");
         database.execSQL("INSERT INTO videos VALUES(5,'Conic Video 2','conic223', 2);");
+        // Videos for Askeng-CP
+        database.execSQL("INSERT INTO videos VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_cp) + "','askeng_cp', 4);");
+        
+        
         // Question
         database.execSQL("INSERT INTO quizzes VALUES(1, 1, 'Real Question', 'choices', '15a + b|a*b*c + 2|3d + 4|a', '1', 'this is the hint', 'description goes here');");
         database.execSQL("INSERT INTO quizzes VALUES(1, 2, 'Real Question q2', 'choices', 'c1|cc2|ccc3|cccc4', '1', 'this is the hint', 'description goes here again');");

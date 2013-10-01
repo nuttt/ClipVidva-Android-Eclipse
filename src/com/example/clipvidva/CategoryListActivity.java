@@ -28,23 +28,25 @@ public class CategoryListActivity extends Activity {
 		categoriesDataSource.open();
 		ListView listView = (ListView)findViewById(R.id.categories_list_view);
 		listView.setAdapter(categoriesListAdapter);
-		listView.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				Category clicked = (Category)categoriesListAdapter.getItem(arg2);
-				int categoryId = clicked.getId();
-				Intent i = new Intent(arg0.getContext(), SubjectListActivity.class);
-				i.putExtra("CATEGORY_ID", categoryId);
-				startActivity(i);
-			}
-		});
+		listView.setOnItemClickListener(new CategoryItemClickListener());
 		ArrayList<Category> categories = categoriesDataSource.getAllCategories();
 		for(int i=0; i<categories.size();i++){
 			Category category = categories.get(i);
 			categoriesListAdapter.addItem(category);
 		}
 		categoriesListAdapter.notifyDataSetChanged();
+	}
+	
+	private class CategoryItemClickListener implements OnItemClickListener{
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			Category clicked = (Category)categoriesListAdapter.getItem(arg2);
+			int categoryId = clicked.getId();
+			Intent i = new Intent(arg0.getContext(), SubjectListActivity.class);
+			i.putExtra("CATEGORY_ID", categoryId + "");
+			startActivity(i);
+		}
 	}
 	
 }

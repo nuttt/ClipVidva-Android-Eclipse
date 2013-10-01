@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CategoriesListAdapter extends myListAdapter<Category> {
+public class CategoriesListAdapter extends MyListAdapter<Category> {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
