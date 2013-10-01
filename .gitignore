@@ -8,6 +8,9 @@
 # Java class files
 *.class
 
+# Cache files (VEE)
+*.cache
+
 # generated files
 bin/
 gen/
