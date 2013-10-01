@@ -81,12 +81,20 @@
                 android:value="com.example.clipvidva.quizzes.QuizCategoryListActivity" />
         </activity>
         <activity
-            android:name="com.example.clipvidva.quizzes.QuizItemDetailActivity"
-            android:label="Question"
+            android:name="com.example.clipvidva.quizzes.QuizQuestionListActivity"
+            android:label="Question List"
             android:parentActivityName="com.example.clipvidva.quizzes.QuizSubjectListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.clipvidva.quizzes.QuizSubjectListActivity" />
+        </activity>
+        <activity
+            android:name="com.example.clipvidva.quizzes.QuizItemDetailActivity"
+            android:label="Question"
+            android:parentActivityName="com.example.clipvidva.quizzes.QuizQuestionListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.clipvidva.quizzes.QuizQuestionListActivity" />
         </activity>
         <activity
             android:name="com.example.clipvidva.VideoViewer"

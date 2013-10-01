@@ -19,7 +19,7 @@ public abstract class MyListAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public T getItem(int i) {
         return container.get(i);
     }
 

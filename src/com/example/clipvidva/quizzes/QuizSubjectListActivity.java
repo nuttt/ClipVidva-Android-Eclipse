@@ -12,12 +12,6 @@ import com.example.clipvidva.SubjectListFragment;
 public class QuizSubjectListActivity extends FragmentActivity
         implements QuizSubjectListFragment.Callbacks {
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
-    private boolean mTwoPane;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +21,6 @@ public class QuizSubjectListActivity extends FragmentActivity
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
             // activity should be in two-pane mode.
-            mTwoPane = true;
 
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
@@ -45,30 +38,13 @@ public class QuizSubjectListActivity extends FragmentActivity
      */
     @Override
     public void onItemSelected(String id, String name) {
-        if (mTwoPane) {
-            // In two-pane mode, show the detail view in this activity by
-            // adding or replacing the detail fragment using a
-            // fragment transaction.
-        	Log.v(this.getClass().getName(), "Selected on Two Pane");
-            Bundle arguments = new Bundle();
-            arguments.putString(QuizItemDetailFragment.ARG_ITEM_ID, id);
-            arguments.putString(QuizItemDetailFragment.ARG_ITEM_NAME, name);
-            QuizItemDetailFragment fragment = new QuizItemDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.item_detail_container, fragment)
-                    .commit();
-
-        } else {
-            // In single-pane mode, simply start the detail activity
-            // for the selected item ID.
-        	Log.v(this.getClass().getName(), "Selected on single pane");
-            Intent detailIntent = new Intent(this, QuizItemDetailActivity.class);
-            detailIntent.putExtra(QuizItemDetailFragment.ARG_ITEM_ID, id);
-            detailIntent.putExtra(QuizItemDetailFragment.ARG_ITEM_NAME, name);
-            
-            startActivity(detailIntent);
-        }
+    	Log.v(this.getClass().getName(), "Selected on single pane");
+        //Intent detailIntent = new Intent(this, QuizItemDetailActivity.class);
+        Intent detailIntent = new Intent(this, QuizQuestionListActivity.class);
+        detailIntent.putExtra(QuizQuestionListActivity.SUBJECT_ID, id);
+        detailIntent.putExtra(QuizQuestionListActivity.SUBJECT_NAME, name);
+        
+        startActivity(detailIntent);
     }
     
     public void setActionBarTitle(String title) {

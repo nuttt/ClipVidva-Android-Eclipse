@@ -71,6 +71,16 @@ public class QuestionsDataSource {
         return question;
     }
     
+    public int getNumberOfQuestions(int subject_id){
+    	String where_clause = ClipVidvaDatabaseHelper.QUIZ_COL_SUBJECT + " = " + subject_id;
+        Cursor rowCount = database.rawQuery("select count(*) from "+ClipVidvaDatabaseHelper.TABLE_QUIZZES+
+        		                            " where "+where_clause+";", null);
+        rowCount.moveToFirst();
+        int count = rowCount.getInt(0);
+        rowCount.close();
+        return count;
+    }
+    
     public Question getOneQuestion(int subject_id, int question_id){
     	return getOneQuestion(Integer.toString(question_id), Integer.toString(subject_id));
     }
