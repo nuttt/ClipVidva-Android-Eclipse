@@ -2,6 +2,7 @@ package com.example.clipvidva.quizzes;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -160,22 +161,15 @@ public class QuizItemDetailActivity extends FragmentActivity {
     	hintView.postInvalidate();
     }
     
-    private void setResult(String customText){
-    	TextView resultView = ((TextView) findViewById(R.id.result));
-    	resultView.setText(customText);
-    	resultView.postInvalidate();
-    }
-    
     private void setResult(){
-    	TextView resultView = ((TextView) findViewById(R.id.result));
     	String resultText = userAnswer.getResult();
-    	if(resultText.length() > 0){
-    		resultView.setText(resultText);
+    	if(resultText.equals("Correct")){
+    		TextView resultView = ((TextView) findViewById(R.id.result));
+    		resultView.setText(R.string.icon_correct);
+    		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/fontawesome-webfont.ttf");
+    		resultView.setTypeface(font);
+    		resultView.postInvalidate();
     	}
-    	else{
-    		resultView.setText("Never Answer");
-    	}
-    	resultView.postInvalidate();
     }
     
     public void getNextQuestion(){
@@ -229,16 +223,17 @@ public class QuizItemDetailActivity extends FragmentActivity {
 		public void onClick(View view) {
 	    	Log.v(this.getClass().getName(), "Choice entered: "+ Integer.toString(choice));
 	    	Log.v(this.getClass().getName(), "Answer: "+ question.getAnswer());
-	    	String result;
 	    	if (isCorrectChoice()) {
-	    		result = "Correct";
+	    		userAnswer.setResult("Correct");
 	    		Log.v(this.getClass().getName(), "Correct!");
 	    		CorrectDialogFragment correctDialog = new CorrectDialogFragment();
 	    		correctDialog.setDescription(question.getDescription());
+	    		boolean isNext = questionsDataSource.getNumberOfQuestions(Integer.parseInt(subject_id)) != question.getId();
+	    		correctDialog.setNext(isNext);
 	    		correctDialog.show(getSupportFragmentManager(), "CorrectDialogFragment");
 	    	}
 	    	else{
-	    		result = "Incorrect";
+	    		userAnswer.setResult("Incorrect");
 	    		Log.v(this.getClass().getName(), "Incorrect!");
 	    		IncorrectDialogFragment incorrectDialog = new IncorrectDialogFragment();
 	    		incorrectDialog.show(getSupportFragmentManager(), "IncorrectDialogFragment");	    		
@@ -246,8 +241,8 @@ public class QuizItemDetailActivity extends FragmentActivity {
     		userAnswersDataSource.editAnswer(userAnswer.getSubject_id(), 
 					 userAnswer.getQuestion_id(), 
 					 Integer.toString(choice), 
-					 result);
-	    	setResult(result);
+					 userAnswer.getResult());
+	    	setResult();
 		}
 		
 		private boolean isCorrectChoice(){

@@ -12,6 +12,7 @@
     <string name="title_category">ดูวิดีโอ</string>
     <string name="submit_text">ส่งคำตอบ</string>
     <string name="next">ข้อถัดไป</string>
+    <string name="choose_other_subject">เลือกวิชาอื่น</string>
     <string name="close">ปิด</string>
     <string name="correct_title">ถูกต้อง!</string>
     <string name="correct_desc">กดเพื่อทำข้อถัดไป</string>
@@ -20,6 +21,7 @@
     <string name="incorrect_desc">ลองตอบใหม่อีกครั้งนะ</string>
     <string name="try_again">กลับไปลองอีกครั้ง</string>
     <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
+    <string name="icon_correct">&#xf00c;</string>
 
     <!-- for debug purpose -->
     <string name="choice_default">Choice</string>

@@ -12,12 +12,6 @@ import com.example.clipvidva.SubjectListFragment;
 public class QuizSubjectListActivity extends FragmentActivity
         implements QuizSubjectListFragment.Callbacks {
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
-    private boolean mTwoPane;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +21,6 @@ public class QuizSubjectListActivity extends FragmentActivity
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
             // activity should be in two-pane mode.
-            mTwoPane = true;
 
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.

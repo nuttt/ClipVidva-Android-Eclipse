@@ -11,11 +11,46 @@ import com.example.clipvidva.R;
 
 public class CorrectDialogFragment extends DialogFragment {
 	private String description;
+	private boolean next;
+	private String nextText;
 	
+	
+	public CorrectDialogFragment() {
+		super();
+		Log.v(this.getClass().getName(), "Create correct dialog");
+		this.nextText = "wtf";
+		Log.v(this.getClass().getName(), "Create correct dialog2 "+this.nextText);
+	}
+	
+
+	public String getDescription() {
+		return description;
+	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+
+	public boolean isNext() {
+		return next;
+	}
+
+
+	public void setNext(boolean next) {
+		/*
+		this.next = next;
+		Log.v(this.getClass().getName(), "Try to set Text");
+		if(this.next){
+			this.nextText = getResources().getString(R.string.next);
+		}
+		else{
+			this.nextText = getResources().getString(R.string.choose_other_subject);
+		}
+		Log.v(this.getClass().getName(), "NextText: "+this.nextText);*/
+	}
+
+
 	@Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
@@ -34,6 +69,7 @@ public class CorrectDialogFragment extends DialogFragment {
                    }
                });
         // Create the AlertDialog object and return it
+        Log.v(this.getClass().getName(), "Dialog created: "+nextText);
         return builder.create();
     }
 }
