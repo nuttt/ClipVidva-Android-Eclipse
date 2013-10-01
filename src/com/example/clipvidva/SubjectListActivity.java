@@ -23,6 +23,9 @@ public class SubjectListActivity extends Activity {
 		
 		Intent intent = getIntent();
 		int categoryId = Integer.parseInt(intent.getStringExtra("CATEGORY_ID"));
+		String categoryName = intent.getStringExtra("CATEGORY_NAME");
+		
+		getActionBar().setTitle(categoryName);
 		
 		subjectsDataSource = new SubjectsDataSource(getApplicationContext());
 		subjectsDataSource.open();
@@ -54,6 +57,7 @@ public class SubjectListActivity extends Activity {
 			if(videoNum == 1){
 				ArrayList<Video> videos = videoDataSource.getAllVideosIn(subjectId);
 				Video video = videos.get(0); 
+//				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
 				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
 				intent.putExtra("VIDEO_FILENAME", video.getFile());
 				startActivity(intent);

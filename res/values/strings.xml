@@ -35,5 +35,9 @@
     <string name="title_activity_video_viewer">VideoViewer</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_video_full_viewer">VideoFullViewer</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="category_activity_title">เลือกหมวดหมู่คลิป</string>
 
 </resources>

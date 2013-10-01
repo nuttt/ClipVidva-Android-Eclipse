@@ -23,6 +23,7 @@ public class CategoryListActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.category_item_list);
+		getActionBar().setTitle(R.string.category_activity_title);
 		categoriesListAdapter = new CategoriesListAdapter();
 		categoriesDataSource = new CategoriesDataSource(this);
 		categoriesDataSource.open();
@@ -43,9 +44,11 @@ public class CategoryListActivity extends Activity {
 				long arg3) {
 			Category clicked = (Category)categoriesListAdapter.getItem(arg2);
 			int categoryId = clicked.getId();
-			Intent i = new Intent(arg0.getContext(), SubjectListActivity.class);
-			i.putExtra("CATEGORY_ID", categoryId + "");
-			startActivity(i);
+			String categoryName = clicked.getName();
+			Intent intent = new Intent(arg0.getContext(), SubjectListActivity.class);
+			intent.putExtra("CATEGORY_ID", categoryId + "");
+			intent.putExtra("CATEGORY_NAME", categoryName);
+			startActivity(intent);
 		}
 	}
 	
