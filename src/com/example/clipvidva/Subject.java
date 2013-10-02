@@ -4,9 +4,9 @@ package com.example.clipvidva;
  * Created by Vee on 8/9/2556.
  */
 public class Subject {
-    private int id;
-    private String name;
-    private int category_id;
+    protected int id;
+    protected String name;
+    protected int category_id;
 
     public Subject() {
     }

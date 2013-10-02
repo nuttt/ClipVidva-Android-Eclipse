@@ -3,8 +3,6 @@ package com.example.clipvidva.quizzes;
 import java.util.List;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -13,9 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ProgressBar;
+import android.widget.ListView;
 
 import com.example.clipvidva.R;
 import com.example.clipvidva.Subject;
@@ -32,7 +29,6 @@ public class QuizSubjectListActivity extends FragmentActivity {
     private UserAnswersDataSource userAnswersDataSource;
     private QuizSubjectListAdapter quizSubjectListAdapter;
     private ListView listView;
-    private ProgressBar progressBar;
     private String category_id;
 
     @Override
@@ -47,10 +43,6 @@ public class QuizSubjectListActivity extends FragmentActivity {
         // Set title bar
         setActionBarTitle(name);
         Log.v(this.getClass().getName(), "progressbar1");
-        progressBar = (ProgressBar)findViewById(R.id.quiz_subject_score);
-        Log.v(this.getClass().getName(), "progressbar2");
-        //progressBar.getProgressDrawable().setColorFilter(Color.RED, Mode.OVERLAY);
-        Log.v(this.getClass().getName(), "progressbar3");
         listView = (ListView)findViewById(R.id.quiz_subject_list_view);
         
         // Get subjects
@@ -71,9 +63,11 @@ public class QuizSubjectListActivity extends FragmentActivity {
 		quizSubjectListAdapter = new QuizSubjectListAdapter();
 	    for(int i=0; i<subjects.size(); i++){
 	    	Subject subject = subjects.get(i);
-	    	quizSubjectListAdapter.addItem(subject);
 	    	int numberOfQuestions = userAnswersDataSource.getNumberOfQuestions(subject.getId());
 	    	int numberOfCorrectAnswers = userAnswersDataSource.getNumberOfCorrectAnswers(subject.getId());
+	    	SubjectWithProgress subjectWithProgress = SubjectWithProgress.parseSubjectWithProgress(
+	    											  subject, numberOfCorrectAnswers, numberOfQuestions);
+	    	quizSubjectListAdapter.addItem(subjectWithProgress);
 	    }
 	    listView.setAdapter(quizSubjectListAdapter);
 	    listView.setOnItemClickListener(new SubjectItemClickListener());
@@ -125,10 +119,10 @@ public class QuizSubjectListActivity extends FragmentActivity {
 			String sId = Integer.toString(subjects.get(position).getId());
 	        String sName = subjects.get(position).getName();
 	        
-	        Intent detailIntent = getIntent();
-	        detailIntent.putExtra(QuizQuestionListActivity.SUBJECT_ID, sId);
-	        detailIntent.putExtra(QuizQuestionListActivity.SUBJECT_NAME, sName);
-	        startActivity(detailIntent);		
+	        Intent intent = new Intent(getApplicationContext(), QuizQuestionListActivity.class);
+	        intent.putExtra(QuizQuestionListActivity.SUBJECT_ID, sId);
+	        intent.putExtra(QuizQuestionListActivity.SUBJECT_NAME, sName);
+	        startActivity(intent);
 		}
     	
     }
