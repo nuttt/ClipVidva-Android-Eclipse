@@ -5,5 +5,10 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_setting"/>
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/close_activity"
+          android:title="@string/close_activity"
+          android:icon="@drawable/close"
+          android:showAsAction="never" />
 
 </menu>
