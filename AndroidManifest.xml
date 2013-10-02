@@ -75,15 +75,15 @@
         <activity
             android:name="com.example.clipvidva.quizzes.QuizSubjectListActivity"
             android:label="Quiz Subjects"
-            android:parentActivityName="com.example.clipvidva.quizzes.QuizCategoryListActivity" >
+            android:parentActivityName=".Splash" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.clipvidva.quizzes.QuizCategoryListActivity" />
+                android:value=".Splash" />
+            
         </activity>
         <activity
             android:name="com.example.clipvidva.quizzes.QuizQuestionListActivity"
-            android:label="Question List"
-            android:parentActivityName="com.example.clipvidva.quizzes.QuizSubjectListActivity" >
+            android:label="Question List" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.clipvidva.quizzes.QuizSubjectListActivity" />

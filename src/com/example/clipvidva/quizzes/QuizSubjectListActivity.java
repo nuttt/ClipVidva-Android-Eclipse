@@ -46,8 +46,10 @@ public class QuizSubjectListActivity extends FragmentActivity
         
         startActivity(detailIntent);
     }
-    
+
+	
     public void setActionBarTitle(String title) {
     	getActionBar().setTitle(title);
+    	
     }
 }

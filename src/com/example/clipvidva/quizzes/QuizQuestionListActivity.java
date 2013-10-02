@@ -55,10 +55,9 @@ public class QuizQuestionListActivity extends Activity {
 	}
 	
 	private void setTitle(String title){
-        if (title.length() > 0) {
-        	ActionBar actionBar = getActionBar();
-        	actionBar.setTitle(title);
-        }
+    	ActionBar actionBar = getActionBar();
+    	actionBar.setTitle(title);
+    	actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 	
 	

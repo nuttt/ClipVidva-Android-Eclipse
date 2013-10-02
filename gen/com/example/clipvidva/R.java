@@ -46,7 +46,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wood_pattern=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f090024;
+        public static final int action_settings=0x7f090025;
         public static final int categories_list_view=0x7f090006;
         public static final int category_item_image=0x7f090004;
         public static final int category_item_text=0x7f090005;
@@ -55,7 +55,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int choice3=0x7f09000e;
         public static final int choice4=0x7f09000f;
         public static final int choices=0x7f09000b;
-        public static final int close_activity=0x7f090025;
+        public static final int close_activity=0x7f090024;
         public static final int fullscreen_content=0x7f090002;
         public static final int fullscreen_content_controls=0x7f090003;
         public static final int hint=0x7f090010;
@@ -106,8 +106,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int video_viewer=0x7f030011;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int video_viewer=0x7f080001;
+        public static final int close_bar=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int video_viewer=0x7f080002;
     }
     public static final class string {
         public static final int action_setting=0x7f060025;
