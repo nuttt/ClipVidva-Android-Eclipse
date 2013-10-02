@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class SubjectListAdapter extends MyListAdapter<Subject> {
+public class VideoListAdapter extends MyListAdapter<Video> {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -16,13 +16,13 @@ public class SubjectListAdapter extends MyListAdapter<Subject> {
 
         if (view == null) {
             LayoutInflater inflate = LayoutInflater.from(context);
-            view = inflate.inflate(R.layout.subject_item, viewGroup, false);
+            view = inflate.inflate(R.layout.video_item, viewGroup, false);
         }
 
 
-        Subject subject = container.get(i);
+        Video subject = container.get(i);
 
-        TextView textView = (TextView) view.findViewById(R.id.subject_item_text);
+        TextView textView = (TextView) view.findViewById(R.id.video_item_text);
         textView.setText(subject.getName());
 
         Typeface font_text = Typeface.createFromAsset(context.getAssets(), "fonts/RSU_Regular.ttf");

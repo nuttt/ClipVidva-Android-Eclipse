@@ -50,26 +50,24 @@ public class SubjectListActivity extends Activity {
 				long arg3) {
 			Subject clicked = (Subject)subjectsListAdapter.getItem(arg2);
 			int subjectId = clicked.getId();
+			String subjectName = clicked.getName();
 			VideosDataSource videoDataSource = new VideosDataSource(getApplicationContext());
 			int videoNum = videoDataSource.getVideosNum(subjectId);
-			Toast toast = Toast.makeText(getApplicationContext(), "This subject id " + subjectId + " have " + videoNum +" videos.", Toast.LENGTH_SHORT);
-			toast.show();
 			if(videoNum == 1){
 				ArrayList<Video> videos = videoDataSource.getAllVideosIn(subjectId);
 				Video video = videos.get(0); 
-//				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
 				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
 				intent.putExtra("VIDEO_FILENAME", video.getFile());
 				startActivity(intent);
 			} else if(videoNum > 1){
-				
+				Intent intent = new Intent(arg0.getContext(), VideoListActivity.class);
+				intent.putExtra("SUBJECT_ID", subjectId+"");
+				intent.putExtra("SUBJECT_NAME", subjectName);
+				startActivity(intent);
 			} else {
 				Toast noVideo = Toast.makeText(getApplicationContext(), "No videos available.", Toast.LENGTH_SHORT);
 				noVideo.show();
 			}
-//			Intent i = new Intent(arg0.getContext(), SubjectListActivity.class);
-//			i.putExtra("SUBJECT_ID", subjectId + "");
-//			startActivity(i);
 		}
 	}
 	

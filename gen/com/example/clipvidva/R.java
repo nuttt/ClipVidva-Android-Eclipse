@@ -79,8 +79,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int subject_list_view=0x7f090020;
         public static final int submit_button=0x7f090012;
         public static final int videoView=0x7f090023;
-        public static final int video_item_list=0x7f090022;
         public static final int video_item_text=0x7f090021;
+        public static final int video_list_view=0x7f090022;
     }
     public static final class layout {
         public static final int activity_item_detail=0x7f030000;
