@@ -1,7 +1,6 @@
 package com.example.clipvidva;
 
 import com.example.clipvidva.quizzes.QuizSubjectListActivity;
-import com.example.clipvidva.quizzes.QuizSubjectListFragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,9 +10,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-/**
- * Created by nuttt on 12/9/13.
- */
 public class Splash extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +43,10 @@ public class Splash extends Activity {
         startActivity(intent);
         Log.v(this.getClass().getName(), "Start quiz activity");*/
     	
-    	// Hardcoded -- having only one category
+    	// Hard coded -- having only one category
         Intent detailIntent = new Intent(this, QuizSubjectListActivity.class);
-        detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_ID, 1+"");
-        detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_NAME, getString(R.string.title_quiz));
+        detailIntent.putExtra(QuizSubjectListActivity.ARG_ITEM_ID, 1+"");
+        detailIntent.putExtra(QuizSubjectListActivity.ARG_ITEM_NAME, getString(R.string.title_quiz));
         startActivity(detailIntent);
         return true;
     }

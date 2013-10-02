@@ -44,26 +44,16 @@ public class QuizItemDetailActivity extends FragmentActivity {
         Log.v(this.getClass().getName(), "ITEM_ID "+question_id);
         Log.v(this.getClass().getName(), "SUBJECT_ID "+subject_id);
         
-        Log.v(this.getClass().getName(), "Create Data Source");
         questionsDataSource = new QuestionsDataSource(getApplicationContext());
-        Log.v(this.getClass().getName(), "Data Source open");
         questionsDataSource.open();
-        Log.v(this.getClass().getName(), "Data Source opened");
         question = questionsDataSource.getOneQuestion(subject_id, question_id);
-        Log.v(this.getClass().getName(), "Got question");
         
-        Log.v(this.getClass().getName(), "Create user answers ");
         userAnswersDataSource = new UserAnswersDataSource(getApplicationContext());
-        Log.v(this.getClass().getName(), "Open user answer");
         userAnswersDataSource.open();
-        Log.v(this.getClass().getName(), "Get answer");
         userAnswer = userAnswersDataSource.getUserAnswer(subject_id, question_id);
-        Log.v(this.getClass().getName(), "Got");
         
         setTitle(subject_name);
-        Log.v(this.getClass().getName(), "Start Render");
         render();
-        Log.v(this.getClass().getName(), "Finish Render");
     }
     
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,7 +67,6 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.close_activity:
-	        	Log.v(this.getClass().getName(), "Close button clicked");
 	        	finish();
 	            return true;
 	        case R.id.paint_acitivity:
@@ -99,33 +88,25 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	private void render(){
         if (question != null) {
         	
-        	Log.v(this.getClass().getName(), "Question: " + question.getQuestion());
-        	
         	// Set Choices into view
-        	Log.v(this.getClass().getName(), "Set Choices");
         	setChoices();
             
             // Set Question text into view
-        	Log.v(this.getClass().getName(), "Set Questions");
         	setQuestion();
         	setHintHidden();
         	
         	// Set Result text into view
-        	Log.v(this.getClass().getName(), "Set Result");
         	setResult();
         	
         	// Submit Button Listener
-        	Log.v(this.getClass().getName(), "Set submitlistener");
 	        Button submitButton = (Button) findViewById(R.id.submit_button);
 	        submitButton.setOnClickListener(new QuizButtonOnClickListener());
 	        
         	// Hint Button Listener
-	        Log.v(this.getClass().getName(), "Set hintlistener");
 	        Button hintButton = (Button) findViewById(R.id.hint_button);
 	        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
 	        
 	        // Radio Listener
-	        Log.v(this.getClass().getName(), "Set radiogroup");
 	        RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);
 	        for (int i = 0; i < choiceGroup.getChildCount(); i++) {
 	            ((RadioButton) choiceGroup.getChildAt(i)).setOnClickListener(new QuizRadioButtonOnClickListener());
@@ -158,7 +139,6 @@ public class QuizItemDetailActivity extends FragmentActivity {
         RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);
         String[] choices = question.getChoices().split("\\|");
         for (int i = 0; i < choiceGroup.getChildCount(); i++) {
-        	Log.v(this.getClass().getName(), "Choice" + Integer.toString(i) + ": " + choices[i]);
             ((RadioButton) choiceGroup.getChildAt(i)).setText(choices[i]);
         }
     }
@@ -171,7 +151,6 @@ public class QuizItemDetailActivity extends FragmentActivity {
     
     private void setHintHidden(){
     	TextView hintView = ((TextView) findViewById(R.id.hint));
-    	hintView.setText("abdfgd");
     	hintView.setVisibility(View.GONE);
     }
     
@@ -205,10 +184,8 @@ public class QuizItemDetailActivity extends FragmentActivity {
 		intent.putExtra(QuizItemDetailActivity.ARG_ITEM_ID, nextQuestionNo+"");
 		intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_NAME, subject_name);
 		intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_ID, subject_id+"");
-		Log.v(this.getClass().getName(), "Put all extras "+nextQuestionNo);
 		startActivity(intent);
 		finish();
-		Log.v(this.getClass().getName(), "Start intent");
     }
 
     private class QuizRadioButtonOnClickListener implements View.OnClickListener {

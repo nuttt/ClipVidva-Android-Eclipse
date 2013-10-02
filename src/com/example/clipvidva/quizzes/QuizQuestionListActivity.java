@@ -6,7 +6,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,7 +47,6 @@ public class QuizQuestionListActivity extends Activity {
 		super.onResume();
 		quizQuestionListAdapter = new QuizQuestionListAdapter();
 		userAnswers = userAnswersDataSource.getAllAnswersIn(subject_id);
-		Log.v(this.getClass().getName(), "Resume Activity");
 	    for(int i=0; i<userAnswers.size(); i++){
 	    	quizQuestionListAdapter.addItem(userAnswers.get(i));
 	    }
@@ -74,9 +72,7 @@ public class QuizQuestionListActivity extends Activity {
 			intent.putExtra(QuizItemDetailActivity.ARG_ITEM_ID, questionClicked.getQuestion_id()+"");
 			intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_NAME, subject_name);
 			intent.putExtra(QuizItemDetailActivity.ARG_SUBJECT_ID, subject_id+"");
-			Log.v(this.getClass().getName(), "Put all extras "+questionClicked.getQuestion_id());
 			startActivity(intent);
-			Log.v(this.getClass().getName(), "Start intent");
 		}
 	
 	}
@@ -93,7 +89,6 @@ public class QuizQuestionListActivity extends Activity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.close_activity:
-	        	Log.v(this.getClass().getName(), "Close button clicked");
 	        	finish();
 	            return true;
 	        default:

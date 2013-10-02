@@ -1,7 +1,5 @@
 package com.example.clipvidva.paint;
 
-import com.example.clipvidva.R;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,12 +8,10 @@ import android.graphics.Path;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
 
 public class BrushView extends View {
 	private Paint brush = new Paint();
     private Path path = new Path();
-    public Button btnEraseAll;
     public LayoutParams params;
     public BrushView(Context context) {
         super(context);
@@ -24,21 +20,11 @@ public class BrushView extends View {
         brush.setStyle(Paint.Style.STROKE);
         brush.setStrokeJoin(Paint.Join.ROUND);
         brush.setStrokeWidth(7f);
-        //getBackground().setAlpha(50);
-        btnEraseAll = new Button(context);
-        btnEraseAll.setText(R.string.clear_screen);
-        params = new LayoutParams(LayoutParams.MATCH_PARENT,
-                     LayoutParams.WRAP_CONTENT);
-        btnEraseAll.setLayoutParams(params);
-        btnEraseAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //reset the path
-                path.reset();
-                //invalidate the view
-                postInvalidate();
-            }
-        });
+    }
+    
+    public void clearScreen(){
+    	path.reset();
+    	postInvalidate();
     }
     
     public boolean onTouchEvent(MotionEvent event) {

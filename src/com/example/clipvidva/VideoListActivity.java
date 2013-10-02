@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -22,7 +23,6 @@ public class VideoListActivity extends Activity {
 	private VideoListAdapter videosListAdapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.video_item_list);
 		
@@ -47,6 +47,11 @@ public class VideoListActivity extends Activity {
         
         videosListAdapter.notifyDataSetChanged();
         
+	}
+	
+	public void onResume(){
+		super.onResume();
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 	
 	private class VideoItemClickListener implements OnItemClickListener{

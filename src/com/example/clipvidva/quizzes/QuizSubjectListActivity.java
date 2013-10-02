@@ -5,7 +5,6 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,21 +37,17 @@ public class QuizSubjectListActivity extends FragmentActivity {
         Bundle extras = getIntent().getExtras();
         category_id = extras.getString(ARG_ITEM_ID);
         String name = extras.getString(ARG_ITEM_NAME);
-        Log.v(this.getClass().getName(), "ITEM_NAME "+name);
         
         // Set title bar
         setActionBarTitle(name);
-        Log.v(this.getClass().getName(), "progressbar1");
         listView = (ListView)findViewById(R.id.quiz_subject_list_view);
         
         // Get subjects
-        Log.v(this.getClass().getName(), "get subjects");
         subjectsDataSource = new SubjectsDataSource(getApplicationContext());
         subjectsDataSource.open();
         subjects = subjectsDataSource.getAllSubjectsIn(category_id);
         
         // Get score
-        Log.v(this.getClass().getName(), "userAnswersDataSource");
         userAnswersDataSource = new UserAnswersDataSource(getApplicationContext());
         userAnswersDataSource.open();
           
@@ -71,21 +66,8 @@ public class QuizSubjectListActivity extends FragmentActivity {
 	    }
 	    listView.setAdapter(quizSubjectListAdapter);
 	    listView.setOnItemClickListener(new SubjectItemClickListener());
-	    Log.v(this.getClass().getName(), "Notify");
 	    quizSubjectListAdapter.notifyDataSetChanged();  
     }
-    
-/*
-    @Override
-    
-    public void onListItemClick(ListView listView, View view, int position, long id) {
-        super.onListItemClick(listView, view, position, id);
-
-        String sId = Integer.toString(subjects.get(position).getId());
-        String sName = subjects.get(position).getName();
-        mCallbacks.onItemSelected(sId, sName);
-        Log.v(this.getClass().getName(), "Clicked subject named "+ sName);        
-    }*/
 
     public void setActionBarTitle(String title) {
     	getActionBar().setTitle(title);
@@ -102,7 +84,6 @@ public class QuizSubjectListActivity extends FragmentActivity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.close_activity:
-	        	Log.v(this.getClass().getName(), "Close button clicked");
 	        	finish();
 	            return true;
 	        default:

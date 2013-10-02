@@ -2,7 +2,6 @@ package com.example.clipvidva.quizzes;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,6 @@ public class QuizSubjectListAdapter extends MyListAdapter<SubjectWithProgress> {
             view = inflate.inflate(R.layout.quiz_subject_item_list, viewGroup, false);
         }
         
-        Log.v(this.getClass().getName(), "Set Adapter2");
         SubjectWithProgress subject = container.get(i);
         
         TextView textView = (TextView) view.findViewById(R.id.quiz_subject_text);

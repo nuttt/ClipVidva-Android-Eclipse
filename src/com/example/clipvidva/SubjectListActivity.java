@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -47,6 +48,11 @@ public class SubjectListActivity extends Activity {
         
         subjectsListAdapter.notifyDataSetChanged();
         
+	}
+	
+	public void onResume(){
+		super.onResume();
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 	
 	private class SubjectItemClickListener implements OnItemClickListener{
