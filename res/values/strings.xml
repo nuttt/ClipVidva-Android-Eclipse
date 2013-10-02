@@ -22,6 +22,20 @@
     <string name="try_again">กลับไปลองอีกครั้ง</string>
     <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
     <string name="icon_correct">&#xf00c;</string>
+    
+    <!-- askeng -->
+    <string name="subject_askeng_ce">วิศวกรรมโยธา</string>
+    <string name="subject_askeng_che">วิศวกรรมเคมี</string>
+    <string name="subject_askeng_cp">วิศวกรรมคอมพิวเตอร์</string>
+    <string name="subject_askeng_ee">วิศวกรรมไฟฟ้า</string>
+    <string name="subject_askeng_eng">เราเหมาะกับวิศวะไหม</string>
+    <string name="subject_askeng_env">วิศวกรรมสิ่งแวดล้อม</string>
+    <string name="subject_askeng_me">วิศวกรรมเครื่องกล</string>
+    <string name="subject_askeng_mn">วิศวกรรมเหมืองแร่</string>
+    <string name="subject_askeng_mt">วิศวกรรมโลหการและวัสดุ</string>
+    <string name="subject_askeng_pe">วิศวกรรมปิโตรเลียม</string>
+    <string name="subject_askeng_sv">วิศวกรรมสำรวจ</string>
+    
 
     <!-- for debug purpose -->
     <string name="choice_default">Choice</string>
@@ -31,7 +45,6 @@
     <string name="action_setting">action setting</string>
     <string name="icon_video">&#xf03d;</string>
     <string name="icon_pencil">&#xf040;</string>
-    <string name="subject_askeng_cp">วิศวกรรมคอมพิวเตอร์</string>
     <string name="title_subject_list">Subjects</string>
     <string name="title_subject_detail">Subject Detail</string>
     <string name="title_activity_video_viewer">VideoViewer</string>
@@ -41,5 +54,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="category_activity_title">เลือกหมวดหมู่คลิป</string>
+    
 
 </resources>

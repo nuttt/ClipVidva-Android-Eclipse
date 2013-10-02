@@ -41,7 +41,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_ANSWERS_COL_RESULT = "result";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 23;
+    private static final int DATABASE_VERSION = 25;
 
     private Context context;
 
@@ -103,7 +103,17 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("INSERT INTO subjects VALUES(2,'" + context.getResources().getString(R.string.subject_conic_section) + "', 1);");
         database.execSQL("INSERT INTO subjects VALUES(3,'" + context.getResources().getString(R.string.subject_functions) + "', 1);");
         // Subjects for Askeng category
-        database.execSQL("INSERT INTO subjects VALUES(4,'" + context.getResources().getString(R.string.subject_askeng_cp) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(4,'" + context.getResources().getString(R.string.subject_askeng_ce) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(5,'" + context.getResources().getString(R.string.subject_askeng_che) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_cp) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(7,'" + context.getResources().getString(R.string.subject_askeng_ee) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(8,'" + context.getResources().getString(R.string.subject_askeng_eng) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(9,'" + context.getResources().getString(R.string.subject_askeng_env) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(10,'" + context.getResources().getString(R.string.subject_askeng_me) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(11,'" + context.getResources().getString(R.string.subject_askeng_mn) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(12,'" + context.getResources().getString(R.string.subject_askeng_mt) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(13,'" + context.getResources().getString(R.string.subject_askeng_pe) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(14,'" + context.getResources().getString(R.string.subject_askeng_sv) + "', 2);");
         
         // Videos for Real Number
         database.execSQL("INSERT INTO videos VALUES(1,'Video 1','real123', 1);");
@@ -112,8 +122,18 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         // Videos for Conic Section
         database.execSQL("INSERT INTO videos VALUES(4,'Conic Video 1','conic123', 2);");
         database.execSQL("INSERT INTO videos VALUES(5,'Conic Video 2','conic223', 2);");
-        // Videos for Askeng-CP
-        database.execSQL("INSERT INTO videos VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_cp) + "','askeng_cp', 4);");
+        // Videos for Askeng
+        database.execSQL("INSERT INTO videos VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_ce) + "','askeng_ce', 4);");
+        database.execSQL("INSERT INTO videos VALUES(7,'" + context.getResources().getString(R.string.subject_askeng_che) + "','askeng_che', 5);");
+        database.execSQL("INSERT INTO videos VALUES(8,'" + context.getResources().getString(R.string.subject_askeng_cp) + "','askeng_cp', 6);");
+        database.execSQL("INSERT INTO videos VALUES(9,'" + context.getResources().getString(R.string.subject_askeng_ee) + "','askeng_ee', 7);");
+        database.execSQL("INSERT INTO videos VALUES(10,'" + context.getResources().getString(R.string.subject_askeng_eng) + "','askeng_eng', 8);");
+        database.execSQL("INSERT INTO videos VALUES(11,'" + context.getResources().getString(R.string.subject_askeng_env) + "','askeng_env', 9);");
+        database.execSQL("INSERT INTO videos VALUES(12,'" + context.getResources().getString(R.string.subject_askeng_me) + "','askeng_me', 10);");
+        database.execSQL("INSERT INTO videos VALUES(13,'" + context.getResources().getString(R.string.subject_askeng_mn) + "','askeng_mn', 11);");
+        database.execSQL("INSERT INTO videos VALUES(14,'" + context.getResources().getString(R.string.subject_askeng_mt) + "','askeng_mt', 12);");
+        database.execSQL("INSERT INTO videos VALUES(15,'" + context.getResources().getString(R.string.subject_askeng_pe) + "','askeng_pe', 13);");
+        database.execSQL("INSERT INTO videos VALUES(16,'" + context.getResources().getString(R.string.subject_askeng_sv) + "','askeng_sv', 14);");
         
         
         // Question
