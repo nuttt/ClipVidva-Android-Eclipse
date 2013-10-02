@@ -1,6 +1,8 @@
 package com.example.clipvidva;
 
 import com.example.clipvidva.quizzes.QuizCategoryListActivity;
+import com.example.clipvidva.quizzes.QuizSubjectListActivity;
+import com.example.clipvidva.quizzes.QuizSubjectListFragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -42,10 +44,16 @@ public class Splash extends Activity {
     }
 
     public boolean goToQuiz(View view){
-    	Log.v(this.getClass().getName(), "Click the quiz button");
+    	/*Log.v(this.getClass().getName(), "Click the quiz button");
         Intent intent = new Intent(this, QuizCategoryListActivity.class);
         startActivity(intent);
-        Log.v(this.getClass().getName(), "Start quiz activity");
+        Log.v(this.getClass().getName(), "Start quiz activity");*/
+    	
+    	// Hardcoded -- having only one category
+        Intent detailIntent = new Intent(this, QuizSubjectListActivity.class);
+        detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_ID, 1+"");
+        detailIntent.putExtra(QuizSubjectListFragment.ARG_ITEM_NAME, getString(R.string.title_quiz));
+        startActivity(detailIntent);
         return true;
     }
 }

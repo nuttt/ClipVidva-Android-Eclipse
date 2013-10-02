@@ -17,7 +17,6 @@ public class SubjectListActivity extends Activity {
 	private SubjectListAdapter subjectsListAdapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.subject_item_list);
 		
