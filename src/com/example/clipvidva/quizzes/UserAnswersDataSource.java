@@ -56,6 +56,7 @@ public class UserAnswersDataSource {
         cursor.close();
         return userAnswer;
     }
+   
 
     public List<UserAnswer> getAllAnswersIn(String subject_id) {
         return getAllAnswersIn(Integer.parseInt(subject_id));
@@ -80,6 +81,27 @@ public class UserAnswersDataSource {
 
     public UserAnswer getUserAnswer(int subject_id, int question_id) {
     	return getUserAnswer(Integer.toString(subject_id), Integer.toString(question_id));
+    }
+    
+    public int getNumberOfQuestions(int subject_id){
+    	String where_clause = ClipVidvaDatabaseHelper.QUIZ_COL_SUBJECT + " = " + subject_id;
+        Cursor rowCount = database.rawQuery("select count(*) from "+ClipVidvaDatabaseHelper.TABLE_QUIZZES+
+        		                            " where "+where_clause+";", null);
+        rowCount.moveToFirst();
+        int count = rowCount.getInt(0);
+        rowCount.close();
+        return count;
+    }
+    
+    public int getNumberOfCorrectAnswers(int subject_id){
+    	String where_clause = ClipVidvaDatabaseHelper.USER_ANSWERS_COL_SUBJECT_ID + " = " + subject_id + " and " +
+    			              ClipVidvaDatabaseHelper.USER_ANSWERS_COL_RESULT + " = 'Correct';";
+        Cursor rowCount = database.rawQuery("select count(*) from "+ClipVidvaDatabaseHelper.TABLE_USER_ANSWERS+
+        		                            " where "+where_clause+";", null);
+        rowCount.moveToFirst();
+        int count = rowCount.getInt(0);
+        rowCount.close();
+        return count;
     }
 
     private UserAnswer cursorToUserAnswer(Cursor cursor) {

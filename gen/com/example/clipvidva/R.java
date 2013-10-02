@@ -47,7 +47,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wood_pattern=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f090025;
+        public static final int action_settings=0x7f090027;
         public static final int categories_list_view=0x7f090006;
         public static final int category_item_image=0x7f090004;
         public static final int category_item_text=0x7f090005;
@@ -56,14 +56,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int choice3=0x7f09000e;
         public static final int choice4=0x7f09000f;
         public static final int choices=0x7f09000b;
-        public static final int close_activity=0x7f090024;
+        public static final int close_activity=0x7f090026;
         public static final int fullscreen_content=0x7f090002;
         public static final int fullscreen_content_controls=0x7f090003;
         public static final int hint=0x7f090010;
         public static final int hint_button=0x7f090013;
         public static final int iconView=0x7f090015;
-        public static final int imageView=0x7f090019;
-        public static final int imageView2=0x7f09001a;
+        public static final int imageView=0x7f09001b;
+        public static final int imageView2=0x7f09001c;
         public static final int item_detail=0x7f090007;
         public static final int item_detail_container=0x7f090000;
         public static final int item_list=0x7f090001;
@@ -71,20 +71,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int quiz_category_item_list=0x7f090009;
         public static final int quiz_question_grid=0x7f090017;
         public static final int quiz_question_id=0x7f090016;
-        public static final int quiz_subject_item_list=0x7f090018;
+        public static final int quiz_subject_list_view=0x7f09001a;
+        public static final int quiz_subject_score=0x7f090019;
+        public static final int quiz_subject_text=0x7f090018;
         public static final int relativelayout=0x7f090014;
         public static final int result=0x7f090011;
-        public static final int splash_exam_icon=0x7f09001d;
-        public static final int splash_exam_text=0x7f09001e;
-        public static final int splash_watch_clip_icon=0x7f09001b;
-        public static final int splash_watch_clip_text=0x7f09001c;
+        public static final int splash_exam_icon=0x7f09001f;
+        public static final int splash_exam_text=0x7f090020;
+        public static final int splash_watch_clip_icon=0x7f09001d;
+        public static final int splash_watch_clip_text=0x7f09001e;
         public static final int subject_detail=0x7f090008;
-        public static final int subject_item_text=0x7f09001f;
-        public static final int subject_list_view=0x7f090020;
+        public static final int subject_item_text=0x7f090021;
+        public static final int subject_list_view=0x7f090022;
         public static final int submit_button=0x7f090012;
-        public static final int videoView=0x7f090023;
-        public static final int video_item_text=0x7f090021;
-        public static final int video_list_view=0x7f090022;
+        public static final int videoView=0x7f090025;
+        public static final int video_item_text=0x7f090023;
+        public static final int video_list_view=0x7f090024;
     }
     public static final class layout {
         public static final int activity_item_detail=0x7f030000;
@@ -99,12 +101,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int quiz_question_item_list=0x7f030009;
         public static final int quiz_question_list=0x7f03000a;
         public static final int quiz_subject_item_list=0x7f03000b;
-        public static final int splash=0x7f03000c;
-        public static final int subject_item=0x7f03000d;
-        public static final int subject_item_list=0x7f03000e;
-        public static final int video_item=0x7f03000f;
-        public static final int video_item_list=0x7f030010;
-        public static final int video_viewer=0x7f030011;
+        public static final int quiz_subject_list=0x7f03000c;
+        public static final int splash=0x7f03000d;
+        public static final int subject_item=0x7f03000e;
+        public static final int subject_item_list=0x7f03000f;
+        public static final int video_item=0x7f030010;
+        public static final int video_item_list=0x7f030011;
+        public static final int video_viewer=0x7f030012;
     }
     public static final class menu {
         public static final int close_bar=0x7f080000;
@@ -190,6 +193,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ButtonBarButton=0x7f070004;
         public static final int FullscreenActionBarStyle=0x7f070005;
         public static final int FullscreenTheme=0x7f070002;
+        public static final int QuizProgressBar=0x7f070006;
     }
     public static final class styleable {
         /** 
