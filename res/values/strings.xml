@@ -23,6 +23,7 @@
     <string name="try_again">กลับไปลองอีกครั้ง</string>
     <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
     <string name="icon_correct">&#xf00c;</string>
+    <string name="icon_arrow">&#xf138;</string>
     <string name="close_activity">ปิด</string>
     <string name="clear_screen">ลบหน้ากระดาษ</string>
     

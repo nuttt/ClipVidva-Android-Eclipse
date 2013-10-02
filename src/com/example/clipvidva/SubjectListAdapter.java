@@ -25,6 +25,11 @@ public class SubjectListAdapter extends MyListAdapter<Subject> {
         TextView textView = (TextView) view.findViewById(R.id.subject_item_text);
         textView.setText(subject.getName());
 
+
+        TextView iconView = (TextView) view.findViewById(R.id.icon_arrow);
+		Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/fontawesome-webfont.ttf");
+		iconView.setTypeface(font);
+		
         Typeface font_text = Typeface.createFromAsset(context.getAssets(), "fonts/RSU_Regular.ttf");
         textView.setTypeface(font_text);
 

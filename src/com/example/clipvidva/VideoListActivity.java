@@ -21,19 +21,26 @@ public class VideoListActivity extends Activity {
 
 	private VideosDataSource videosDataSource;
 	private VideoListAdapter videosListAdapter;
+	private int subjectId;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.video_item_list);
 		
 		Intent intent = getIntent();
-		int subjectId = Integer.parseInt(intent.getStringExtra("SUBJECT_ID"));
+		subjectId = Integer.parseInt(intent.getStringExtra("SUBJECT_ID"));
 		String subjectName = intent.getStringExtra("SUBJECT_NAME");
 		
 		getActionBar().setTitle(subjectName);
 		
 		videosDataSource = new VideosDataSource(getApplicationContext());
 		videosDataSource.open();
+        
+	}
+	
+	public void onResume(){
+		super.onResume();
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		videosListAdapter = new VideoListAdapter();
 		
 		GridView listView = (GridView) findViewById(R.id.video_list_view);
@@ -42,16 +49,10 @@ public class VideoListActivity extends Activity {
 		
         ArrayList<Video> videos = videosDataSource.getAllVideosIn(subjectId);
         for(int i = 0; i < videos.size(); i++){
-        	videosListAdapter.addItem(videos.get(i));
+        	VideoWithStatus videoWithStatus = VideoWithStatus.parseVideoWithStatus(videos.get(i));
+        	videosListAdapter.addItem(videoWithStatus);
         }
-        
         videosListAdapter.notifyDataSetChanged();
-        
-	}
-	
-	public void onResume(){
-		super.onResume();
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 	
 	private class VideoItemClickListener implements OnItemClickListener{

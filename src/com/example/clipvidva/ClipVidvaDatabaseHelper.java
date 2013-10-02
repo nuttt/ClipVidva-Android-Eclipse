@@ -1,5 +1,7 @@
 package com.example.clipvidva;
 
+import java.io.FileInputStream;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -95,6 +97,24 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         for(String create_query: this.creates){
             database.execSQL(create_query);
         }
+        /*
+        InputStream inputStream = context.getResources().openRawResource(R);
+
+        InputStreamReader inputreader = new InputStreamReader(inputStream);
+        BufferedReader buffreader = new BufferedReader(inputreader);
+        String line;
+        StringBuilder text = new StringBuilder();
+
+        try {
+            while (( line = buffreader.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+            }
+        } catch (IOException e) {
+            return null;
+        }
+        return text.toString();*/
+        
         // TODO: Change from hard-code to read from file
         database.execSQL("INSERT INTO categories VALUES(1,'" + context.getResources().getString(R.string.math_category) + "','hsmaths');");
         database.execSQL("INSERT INTO categories VALUES(2,'" + context.getResources().getString(R.string.askvidva_category) + "','askeng');");

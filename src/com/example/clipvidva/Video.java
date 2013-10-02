@@ -4,10 +4,10 @@ package com.example.clipvidva;
  * Created by Vee on 8/9/2556.
  */
 public class Video {
-    private int id;
-    private String name;
-    private String file;
-    private int subject_id;
+    protected int id;
+    protected String name;
+    protected String file;
+    protected int subject_id;
 
     public Video() {
     }
