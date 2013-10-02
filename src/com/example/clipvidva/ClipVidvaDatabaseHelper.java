@@ -41,24 +41,24 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_ANSWERS_COL_RESULT = "result";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 25;
+    private static final int DATABASE_VERSION = 27;
 
     private Context context;
 
     // Database creation sql statement
     private static final String CATEGORIES_CREATE = "create table "
             + TABLE_CATEGORIES + "("
-            + CATEGORY_COL_ID + " integer primary key autoincrement, "
+            + CATEGORY_COL_ID + " integer primary key, "
             + CATEGORY_COL_NAME + " text not null, "
             + CATEGORY_COL_IMG + " text);";
     private static final String SUBJECTS_CREATE = "create table "
             + TABLE_SUBJECTS + "("
-            + SUBJECT_COL_ID + " integer primary key autoincrement, "
+            + SUBJECT_COL_ID + " integer primary key, "
             + SUBJECT_COL_NAME + " text not null, "
             + SUBJECT_COL_CATEGORY + " integer not null);";
     private static final String VIDEOS_CREATE = "create table "
             + TABLE_VIDEOS + "("
-            + VIDEO_COL_ID + " integer primary key autoincrement, "
+            + VIDEO_COL_ID + " integer primary key, "
             + VIDEO_COL_NAME + " text not null, "
             + VIDEO_COL_FILE + " text not null, "
             + VIDEO_COL_SUBJECT + " integer not null);";
@@ -99,41 +99,45 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
         database.execSQL("INSERT INTO categories VALUES(1,'" + context.getResources().getString(R.string.math_category) + "','hsmaths');");
         database.execSQL("INSERT INTO categories VALUES(2,'" + context.getResources().getString(R.string.askvidva_category) + "','askeng');");
         // Subjects for Maths category
-        database.execSQL("INSERT INTO subjects VALUES(1,'" + context.getResources().getString(R.string.subject_real_number) + "', 1);");
-        database.execSQL("INSERT INTO subjects VALUES(2,'" + context.getResources().getString(R.string.subject_conic_section) + "', 1);");
-        database.execSQL("INSERT INTO subjects VALUES(3,'" + context.getResources().getString(R.string.subject_functions) + "', 1);");
+        database.execSQL("INSERT INTO subjects VALUES(101,'" + context.getResources().getString(R.string.subject_real_number) + "', 1);");
+        database.execSQL("INSERT INTO subjects VALUES(102,'" + context.getResources().getString(R.string.subject_conic_section) + "', 1);");
+        database.execSQL("INSERT INTO subjects VALUES(103,'" + context.getResources().getString(R.string.subject_functions) + "', 1);");
         // Subjects for Askeng category
-        database.execSQL("INSERT INTO subjects VALUES(4,'" + context.getResources().getString(R.string.subject_askeng_ce) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(5,'" + context.getResources().getString(R.string.subject_askeng_che) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_cp) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(7,'" + context.getResources().getString(R.string.subject_askeng_ee) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(8,'" + context.getResources().getString(R.string.subject_askeng_eng) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(9,'" + context.getResources().getString(R.string.subject_askeng_env) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(10,'" + context.getResources().getString(R.string.subject_askeng_me) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(11,'" + context.getResources().getString(R.string.subject_askeng_mn) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(12,'" + context.getResources().getString(R.string.subject_askeng_mt) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(13,'" + context.getResources().getString(R.string.subject_askeng_pe) + "', 2);");
-        database.execSQL("INSERT INTO subjects VALUES(14,'" + context.getResources().getString(R.string.subject_askeng_sv) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(201,'" + context.getResources().getString(R.string.subject_askeng_ce) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(202,'" + context.getResources().getString(R.string.subject_askeng_che) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(203,'" + context.getResources().getString(R.string.subject_askeng_cp) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(204,'" + context.getResources().getString(R.string.subject_askeng_ee) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(205,'" + context.getResources().getString(R.string.subject_askeng_eng) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(206,'" + context.getResources().getString(R.string.subject_askeng_env) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(207,'" + context.getResources().getString(R.string.subject_askeng_me) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(208,'" + context.getResources().getString(R.string.subject_askeng_mn) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(209,'" + context.getResources().getString(R.string.subject_askeng_mt) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(210,'" + context.getResources().getString(R.string.subject_askeng_pe) + "', 2);");
+        database.execSQL("INSERT INTO subjects VALUES(211,'" + context.getResources().getString(R.string.subject_askeng_sv) + "', 2);");
         
         // Videos for Real Number
-        database.execSQL("INSERT INTO videos VALUES(1,'Video 1','real123', 1);");
-        database.execSQL("INSERT INTO videos VALUES(2,'Video 2','real223', 1);");
-        database.execSQL("INSERT INTO videos VALUES(3,'Video 3','real323', 1);");
+        database.execSQL("INSERT INTO videos VALUES(10101,'1','real_1', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10102,'2','real_2', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10103,'3','real_3', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10104,'4','real_4', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10105,'5','real_5', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10106,'6','real_6', 101);");
+        database.execSQL("INSERT INTO videos VALUES(10107,'7','real_7', 101);");
         // Videos for Conic Section
-        database.execSQL("INSERT INTO videos VALUES(4,'Conic Video 1','conic123', 2);");
-        database.execSQL("INSERT INTO videos VALUES(5,'Conic Video 2','conic223', 2);");
+        database.execSQL("INSERT INTO videos VALUES(10201,'1','conic123', 102);");
+        database.execSQL("INSERT INTO videos VALUES(10202,'2','conic223', 102);");
         // Videos for Askeng
-        database.execSQL("INSERT INTO videos VALUES(6,'" + context.getResources().getString(R.string.subject_askeng_ce) + "','askeng_ce', 4);");
-        database.execSQL("INSERT INTO videos VALUES(7,'" + context.getResources().getString(R.string.subject_askeng_che) + "','askeng_che', 5);");
-        database.execSQL("INSERT INTO videos VALUES(8,'" + context.getResources().getString(R.string.subject_askeng_cp) + "','askeng_cp', 6);");
-        database.execSQL("INSERT INTO videos VALUES(9,'" + context.getResources().getString(R.string.subject_askeng_ee) + "','askeng_ee', 7);");
-        database.execSQL("INSERT INTO videos VALUES(10,'" + context.getResources().getString(R.string.subject_askeng_eng) + "','askeng_eng', 8);");
-        database.execSQL("INSERT INTO videos VALUES(11,'" + context.getResources().getString(R.string.subject_askeng_env) + "','askeng_env', 9);");
-        database.execSQL("INSERT INTO videos VALUES(12,'" + context.getResources().getString(R.string.subject_askeng_me) + "','askeng_me', 10);");
-        database.execSQL("INSERT INTO videos VALUES(13,'" + context.getResources().getString(R.string.subject_askeng_mn) + "','askeng_mn', 11);");
-        database.execSQL("INSERT INTO videos VALUES(14,'" + context.getResources().getString(R.string.subject_askeng_mt) + "','askeng_mt', 12);");
-        database.execSQL("INSERT INTO videos VALUES(15,'" + context.getResources().getString(R.string.subject_askeng_pe) + "','askeng_pe', 13);");
-        database.execSQL("INSERT INTO videos VALUES(16,'" + context.getResources().getString(R.string.subject_askeng_sv) + "','askeng_sv', 14);");
+        database.execSQL("INSERT INTO videos VALUES(20101,'" + context.getResources().getString(R.string.subject_askeng_ce) + "','askeng_ce', 201);");
+        database.execSQL("INSERT INTO videos VALUES(20201,'" + context.getResources().getString(R.string.subject_askeng_che) + "','askeng_che', 202);");
+        database.execSQL("INSERT INTO videos VALUES(20301,'" + context.getResources().getString(R.string.subject_askeng_cp) + "','askeng_cp', 203);");
+        database.execSQL("INSERT INTO videos VALUES(20401,'" + context.getResources().getString(R.string.subject_askeng_ee) + "','askeng_ee', 204);");
+        database.execSQL("INSERT INTO videos VALUES(20501,'" + context.getResources().getString(R.string.subject_askeng_eng) + "','askeng_eng', 205);");
+        database.execSQL("INSERT INTO videos VALUES(20601,'" + context.getResources().getString(R.string.subject_askeng_env) + "','askeng_env', 206);");
+        database.execSQL("INSERT INTO videos VALUES(20701,'" + context.getResources().getString(R.string.subject_askeng_me) + "','askeng_me', 207);");
+        database.execSQL("INSERT INTO videos VALUES(20801,'" + context.getResources().getString(R.string.subject_askeng_mn) + "','askeng_mn', 208);");
+        database.execSQL("INSERT INTO videos VALUES(20901,'" + context.getResources().getString(R.string.subject_askeng_mt) + "','askeng_mt', 209);");
+        database.execSQL("INSERT INTO videos VALUES(21001,'" + context.getResources().getString(R.string.subject_askeng_pe) + "','askeng_pe', 210);");
+        database.execSQL("INSERT INTO videos VALUES(21101,'" + context.getResources().getString(R.string.subject_askeng_sv) + "','askeng_sv', 211);");
         
         
         // Question

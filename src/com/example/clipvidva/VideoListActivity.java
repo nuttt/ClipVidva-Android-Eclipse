@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.widget.GridView;
 
 public class VideoListActivity extends Activity {
 
@@ -30,7 +30,7 @@ public class VideoListActivity extends Activity {
 		videosDataSource.open();
 		videosListAdapter = new VideoListAdapter();
 		
-		ListView listView = (ListView) findViewById(R.id.video_list_view);
+		GridView listView = (GridView) findViewById(R.id.video_list_view);
         listView.setAdapter(videosListAdapter);
         listView.setOnItemClickListener(new VideoItemClickListener());
 		
