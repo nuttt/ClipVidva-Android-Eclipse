@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
-import com.example.clipvidva.CategoryListFragment;
 import com.example.clipvidva.R;
 
 public class QuizCategoryListActivity extends FragmentActivity
@@ -37,7 +36,6 @@ public class QuizCategoryListActivity extends FragmentActivity
                     .setActivateOnItemClick(true);
         }
 
-        // TODO: If exposing deep links into your app, handle intents here.
     }
 
     /**

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -47,6 +51,25 @@ public class CategoryListActivity extends Activity {
 			intent.putExtra("CATEGORY_NAME", categoryName);
 			startActivity(intent);
 		}
+	}
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate close for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.close_bar, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.close_activity:
+	        	Log.v(this.getClass().getName(), "Close button clicked");
+	        	finish();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 	
 }
