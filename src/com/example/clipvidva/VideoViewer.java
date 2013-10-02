@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.Window;
 import android.widget.MediaController;
@@ -19,11 +20,17 @@ public class VideoViewer extends Activity {
 		
 		Intent intent = getIntent();
 		String filename = intent.getStringExtra("VIDEO_FILENAME");
+		Boolean fileExist = Boolean.parseBoolean(intent.getStringExtra("VIDEO_EXIST"));
 		VideoView video = (VideoView)findViewById(R.id.videoView);
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(video);
         video.setMediaController(mediaController);
-        video.setVideoURI(Uri.parse("http://www.withlovee.com/clipvidva-vid/" + filename + ".mp4"));
+        if(fileExist){
+        	video.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory()
+                    + "/clipvidva/" + filename + ".mp4"));
+        } else {
+        	video.setVideoURI(Uri.parse("http://www.withlovee.com/clipvidva-vid/" + filename + ".mp4"));
+        }
         video.start();
 	}
 
