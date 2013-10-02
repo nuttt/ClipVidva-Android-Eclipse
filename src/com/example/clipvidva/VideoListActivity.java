@@ -1,14 +1,17 @@
 package com.example.clipvidva;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.Toast;
 
 public class VideoListActivity extends Activity {
 
@@ -50,9 +53,19 @@ public class VideoListActivity extends Activity {
 			DownloadDialogFragment downloadDialogFragment = new DownloadDialogFragment();
 			Video clicked = videosListAdapter.getItem(arg2);
 			String videoFileName = clicked.getFile();
-			downloadDialogFragment.setVideoFilename(videoFileName);
 			
-			downloadDialogFragment.show(getFragmentManager(), "donwloadDialogFragment");
+			File direct = new File(Environment.getExternalStorageDirectory()
+                    + "/clipvidva/" + videoFileName + ".mp4");
+			if (!direct.exists()) {
+				downloadDialogFragment.setVideoFilename(videoFileName);
+			
+				downloadDialogFragment.show(getFragmentManager(), "donwloadDialogFragment");
+			} else {
+				Intent intent = new Intent(getApplicationContext() , VideoViewer.class);
+   				intent.putExtra("VIDEO_FILENAME", videoFileName);
+   				intent.putExtra("VIDEO_EXIST", "TRUE");
+   				startActivity(intent);
+			}
 			
 //			Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
 //			intent.putExtra("VIDEO_FILENAME", videoFileName);
