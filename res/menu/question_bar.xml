@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/paint_acitivity"
+          android:icon="@drawable/pencil"
+          android:showAsAction="always"
+          android:title="@string/paint_button"/>
+    <item android:id="@+id/close_activity"
+          android:icon="@drawable/close"
+          android:showAsAction="always"
+          android:title="@string/close_activity"/>
+</menu>

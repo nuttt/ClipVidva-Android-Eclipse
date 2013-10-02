@@ -17,12 +17,14 @@
     <string name="correct_title">ถูกต้อง!</string>
     <string name="correct_desc">กดเพื่อทำข้อถัดไป</string>
     <string name="hint_button">ขอคำใบ้</string>
+    <string name="paint_button">กระดาษทด</string>
     <string name="incorrect_title">ยังไม่ถูก!</string>
     <string name="incorrect_desc">ลองตอบใหม่อีกครั้งนะ</string>
     <string name="try_again">กลับไปลองอีกครั้ง</string>
     <string name="no_hint">ไม่มีคำใบ้สำหรับข้อนี้</string>
     <string name="icon_correct">&#xf00c;</string>
     <string name="close_activity">ปิด</string>
+    <string name="clear_screen">ลบหน้ากระดาษ</string>
     
     <!-- askeng -->
     <string name="subject_askeng_ce">วิศวกรรมโยธา</string>

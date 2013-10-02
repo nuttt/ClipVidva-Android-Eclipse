@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.clipvidva.ItemDetailFragment;
 import com.example.clipvidva.R;
 import com.example.clipvidva.Subject;
 import com.example.clipvidva.SubjectsDataSource;

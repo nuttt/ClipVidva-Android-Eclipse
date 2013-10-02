@@ -108,6 +108,16 @@
             android:label="@string/title_activity_video_full_viewer"
             android:theme="@style/FullscreenTheme" >
         </activity>
+        
+        <!-- PAINT -->
+        <activity
+           android:name="com.example.clipvidva.paint.PaintActivity"
+           android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

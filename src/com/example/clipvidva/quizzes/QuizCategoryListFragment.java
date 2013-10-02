@@ -12,7 +12,6 @@ import android.widget.ListView;
 import com.example.clipvidva.CategoriesDataSource;
 import com.example.clipvidva.CategoriesListAdapter;
 import com.example.clipvidva.Category;
-import com.example.clipvidva.ItemDetailFragment;
 
 /**
  * A list fragment representing a list of Items. This fragment

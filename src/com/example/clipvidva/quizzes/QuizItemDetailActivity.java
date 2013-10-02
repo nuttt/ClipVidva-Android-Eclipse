@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.clipvidva.R;
+import com.example.clipvidva.paint.PaintActivity;
 
 public class QuizItemDetailActivity extends FragmentActivity {
 
@@ -68,7 +69,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    // Inflate close for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.close_bar, menu);
+	    inflater.inflate(R.menu.question_bar, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -78,6 +79,10 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	        case R.id.close_activity:
 	        	Log.v(this.getClass().getName(), "Close button clicked");
 	        	finish();
+	            return true;
+	        case R.id.paint_acitivity:
+		        Intent detailIntent = new Intent(getApplicationContext(), PaintActivity.class);
+		        startActivity(detailIntent);
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -118,7 +123,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	        Log.v(this.getClass().getName(), "Set hintlistener");
 	        Button hintButton = (Button) findViewById(R.id.hint_button);
 	        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
-
+	        
 	        // Radio Listener
 	        Log.v(this.getClass().getName(), "Set radiogroup");
 	        RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);

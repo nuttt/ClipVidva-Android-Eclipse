@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/delete_screen"
+          android:icon="@drawable/eraser"
+          android:showAsAction="always"
+          android:title="@string/clear_screen"/>
+    <item android:id="@+id/hide_activity"
+          android:icon="@drawable/close"
+          android:showAsAction="always"
+          android:title="@string/close"/>
+</menu>
