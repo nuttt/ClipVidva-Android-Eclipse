@@ -8,6 +8,9 @@
 package com.example.clipvidva;
 
 public final class R {
+    public static final class array {
+        public static final int database=0x7f070000;
+    }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -51,51 +54,51 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wood_pattern=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f090029;
-        public static final int categories_list_view=0x7f090006;
-        public static final int category_item_image=0x7f090004;
-        public static final int category_item_text=0x7f090005;
-        public static final int choice1=0x7f09000c;
-        public static final int choice2=0x7f09000d;
-        public static final int choice3=0x7f09000e;
-        public static final int choice4=0x7f09000f;
-        public static final int choices=0x7f09000b;
-        public static final int close_activity=0x7f090028;
-        public static final int delete_screen=0x7f09002a;
-        public static final int fullscreen_content=0x7f090002;
-        public static final int fullscreen_content_controls=0x7f090003;
-        public static final int hide_activity=0x7f09002b;
-        public static final int hint=0x7f090010;
-        public static final int hint_button=0x7f090013;
-        public static final int iconView=0x7f090015;
-        public static final int icon_arrow=0x7f090021;
-        public static final int icon_video=0x7f090024;
-        public static final int imageView=0x7f09001b;
-        public static final int imageView2=0x7f09001c;
-        public static final int item_detail=0x7f090007;
-        public static final int item_detail_container=0x7f090000;
-        public static final int item_list=0x7f090001;
-        public static final int paint_acitivity=0x7f09002c;
-        public static final int question_title=0x7f09000a;
-        public static final int quiz_category_item_list=0x7f090009;
-        public static final int quiz_question_grid=0x7f090017;
-        public static final int quiz_question_id=0x7f090016;
-        public static final int quiz_subject_list_view=0x7f09001a;
-        public static final int quiz_subject_score=0x7f090019;
-        public static final int quiz_subject_text=0x7f090018;
-        public static final int relativelayout=0x7f090014;
-        public static final int result=0x7f090011;
-        public static final int splash_exam_icon=0x7f09001f;
-        public static final int splash_exam_text=0x7f090020;
-        public static final int splash_watch_clip_icon=0x7f09001d;
-        public static final int splash_watch_clip_text=0x7f09001e;
-        public static final int subject_detail=0x7f090008;
-        public static final int subject_item_text=0x7f090022;
-        public static final int subject_list_view=0x7f090023;
-        public static final int submit_button=0x7f090012;
-        public static final int videoView=0x7f090027;
-        public static final int video_item_text=0x7f090025;
-        public static final int video_list_view=0x7f090026;
+        public static final int action_settings=0x7f0a0029;
+        public static final int categories_list_view=0x7f0a0006;
+        public static final int category_item_image=0x7f0a0004;
+        public static final int category_item_text=0x7f0a0005;
+        public static final int choice1=0x7f0a000c;
+        public static final int choice2=0x7f0a000d;
+        public static final int choice3=0x7f0a000e;
+        public static final int choice4=0x7f0a000f;
+        public static final int choices=0x7f0a000b;
+        public static final int close_activity=0x7f0a0028;
+        public static final int delete_screen=0x7f0a002a;
+        public static final int fullscreen_content=0x7f0a0002;
+        public static final int fullscreen_content_controls=0x7f0a0003;
+        public static final int hide_activity=0x7f0a002b;
+        public static final int hint=0x7f0a0010;
+        public static final int hint_button=0x7f0a0013;
+        public static final int iconView=0x7f0a0015;
+        public static final int icon_arrow=0x7f0a0021;
+        public static final int icon_video=0x7f0a0024;
+        public static final int imageView=0x7f0a001b;
+        public static final int imageView2=0x7f0a001c;
+        public static final int item_detail=0x7f0a0007;
+        public static final int item_detail_container=0x7f0a0000;
+        public static final int item_list=0x7f0a0001;
+        public static final int paint_acitivity=0x7f0a002c;
+        public static final int question_title=0x7f0a000a;
+        public static final int quiz_category_item_list=0x7f0a0009;
+        public static final int quiz_question_grid=0x7f0a0017;
+        public static final int quiz_question_id=0x7f0a0016;
+        public static final int quiz_subject_list_view=0x7f0a001a;
+        public static final int quiz_subject_score=0x7f0a0019;
+        public static final int quiz_subject_text=0x7f0a0018;
+        public static final int relativelayout=0x7f0a0014;
+        public static final int result=0x7f0a0011;
+        public static final int splash_exam_icon=0x7f0a001f;
+        public static final int splash_exam_text=0x7f0a0020;
+        public static final int splash_watch_clip_icon=0x7f0a001d;
+        public static final int splash_watch_clip_text=0x7f0a001e;
+        public static final int subject_detail=0x7f0a0008;
+        public static final int subject_item_text=0x7f0a0022;
+        public static final int subject_list_view=0x7f0a0023;
+        public static final int submit_button=0x7f0a0012;
+        public static final int videoView=0x7f0a0027;
+        public static final int video_item_text=0x7f0a0025;
+        public static final int video_list_view=0x7f0a0026;
     }
     public static final class layout {
         public static final int activity_item_detail=0x7f030000;
@@ -119,68 +122,72 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int video_viewer=0x7f030012;
     }
     public static final class menu {
-        public static final int close_bar=0x7f080000;
-        public static final int main=0x7f080001;
-        public static final int paint_bar=0x7f080002;
-        public static final int question_bar=0x7f080003;
-        public static final int video_viewer=0x7f080004;
+        public static final int close_bar=0x7f090000;
+        public static final int main=0x7f090001;
+        public static final int paint_bar=0x7f090002;
+        public static final int question_bar=0x7f090003;
+        public static final int video_viewer=0x7f090004;
     }
     public static final class string {
-        public static final int action_setting=0x7f060028;
-        public static final int action_settings=0x7f06002e;
+        public static final int action_setting=0x7f06002c;
+        public static final int action_settings=0x7f060032;
+        public static final int agree=0x7f06001b;
         public static final int app_name=0x7f060000;
         public static final int askvidva_category=0x7f060003;
-        public static final int category_activity_title=0x7f060033;
+        public static final int category_activity_title=0x7f060037;
         /**  for debug purpose 
          */
-        public static final int choice_default=0x7f060024;
+        public static final int choice_default=0x7f060028;
         public static final int choose_other_subject=0x7f06000b;
         public static final int clear_screen=0x7f060018;
         public static final int close=0x7f06000c;
         public static final int close_activity=0x7f060017;
         public static final int correct_desc=0x7f06000e;
         public static final int correct_title=0x7f06000d;
-        public static final int dummy_button=0x7f060031;
-        public static final int dummy_content=0x7f060032;
-        public static final int hello_world=0x7f06002f;
+        public static final int download_desc=0x7f06001a;
+        public static final int download_file=0x7f060019;
+        public static final int dummy_button=0x7f060035;
+        public static final int dummy_content=0x7f060036;
+        public static final int hello_world=0x7f060033;
         public static final int hint_button=0x7f06000f;
-        public static final int hint_default=0x7f060027;
+        public static final int hint_default=0x7f06002b;
         public static final int icon_arrow=0x7f060016;
         public static final int icon_correct=0x7f060015;
-        public static final int icon_pencil=0x7f06002a;
-        public static final int icon_video=0x7f060029;
+        public static final int icon_pencil=0x7f06002e;
+        public static final int icon_video=0x7f06002d;
         public static final int incorrect_desc=0x7f060012;
         public static final int incorrect_title=0x7f060011;
         public static final int math_category=0x7f060002;
         public static final int next=0x7f06000a;
+        public static final int no=0x7f06001c;
         public static final int no_hint=0x7f060014;
         public static final int paint_button=0x7f060010;
-        public static final int question_default=0x7f060025;
-        public static final int result_default=0x7f060026;
+        public static final int question_default=0x7f060029;
+        public static final int result_default=0x7f06002a;
         /**  askeng 
          */
-        public static final int subject_askeng_ce=0x7f060019;
-        public static final int subject_askeng_che=0x7f06001a;
-        public static final int subject_askeng_cp=0x7f06001b;
-        public static final int subject_askeng_ee=0x7f06001c;
-        public static final int subject_askeng_eng=0x7f06001d;
-        public static final int subject_askeng_env=0x7f06001e;
-        public static final int subject_askeng_me=0x7f06001f;
-        public static final int subject_askeng_mn=0x7f060020;
-        public static final int subject_askeng_mt=0x7f060021;
-        public static final int subject_askeng_pe=0x7f060022;
-        public static final int subject_askeng_sv=0x7f060023;
+        public static final int subject_askeng_ce=0x7f06001d;
+        public static final int subject_askeng_che=0x7f06001e;
+        public static final int subject_askeng_cp=0x7f06001f;
+        public static final int subject_askeng_ee=0x7f060020;
+        public static final int subject_askeng_eng=0x7f060021;
+        public static final int subject_askeng_env=0x7f060022;
+        public static final int subject_askeng_me=0x7f060023;
+        public static final int subject_askeng_mn=0x7f060024;
+        public static final int subject_askeng_mt=0x7f060025;
+        public static final int subject_askeng_pe=0x7f060026;
+        public static final int subject_askeng_sv=0x7f060027;
         public static final int subject_conic_section=0x7f060005;
         public static final int subject_functions=0x7f060006;
         public static final int subject_real_number=0x7f060004;
         public static final int submit_text=0x7f060009;
-        public static final int title_activity_video_full_viewer=0x7f060030;
-        public static final int title_activity_video_viewer=0x7f06002d;
+        public static final int title_activity_video_full_viewer=0x7f060034;
+        public static final int title_activity_video_viewer=0x7f060031;
         public static final int title_category=0x7f060008;
         public static final int title_item_detail=0x7f060001;
         public static final int title_quiz=0x7f060007;
-        public static final int title_subject_detail=0x7f06002c;
-        public static final int title_subject_list=0x7f06002b;
+        public static final int title_subject_detail=0x7f060030;
+        public static final int title_subject_list=0x7f06002f;
         public static final int try_again=0x7f060013;
     }
     public static final class style {
@@ -199,15 +206,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 11 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int ButtonBar=0x7f070003;
-        public static final int ButtonBarButton=0x7f070004;
-        public static final int FullscreenActionBarStyle=0x7f070005;
-        public static final int FullscreenTheme=0x7f070002;
-        public static final int QuizProgressBar=0x7f070006;
+        public static final int AppTheme=0x7f080001;
+        public static final int ButtonBar=0x7f080003;
+        public static final int ButtonBarButton=0x7f080004;
+        public static final int FullscreenActionBarStyle=0x7f080005;
+        public static final int FullscreenTheme=0x7f080002;
+        public static final int QuizProgressBar=0x7f080006;
     }
     public static final class styleable {
         /** 

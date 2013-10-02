@@ -27,6 +27,11 @@
     <string name="close_activity">ปิด</string>
     <string name="clear_screen">ลบหน้ากระดาษ</string>
     
+    <string name="download_file">ดาวน์โหลดไฟล์</string>
+    <string name="download_desc">ดาวน์โหลดไฟล์ลงเครื่องเพื่อที่จะดูภายหลังได้</string>
+    <string name="agree">ตกลง</string>
+    <string name="no">ไม่</string>
+    
     <!-- askeng -->
     <string name="subject_askeng_ce">วิศวกรรมโยธา</string>
     <string name="subject_askeng_che">วิศวกรรมเคมี</string>
@@ -59,5 +64,70 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="category_activity_title">เลือกหมวดหมู่คลิป</string>
     
+    <string-array name="database">
+<item>INSERT INTO categories VALUES(1,\'คณิตศาสตร์ม.ปลาย\',\'hsmaths\');</item>
+<item>INSERT INTO categories VALUES(2,\'ถามวิศวะ\',\'askeng\');</item>
+<item>INSERT INTO subjects VALUES(101,\'ระบบจำนวนจริง\', 1);</item>
+<item>INSERT INTO subjects VALUES(102,\'สถิติ\', 1);</item>
+<item>INSERT INTO subjects VALUES(103,\'จำนวนเชิงซ้อน\', 1);</item>
+<item>INSERT INTO subjects VALUES(104,\'ความน่าจะเป็น\', 1);</item>
+<item>INSERT INTO subjects VALUES(201,\'วิศวกรรมโยธา\', 2);</item>
+<item>INSERT INTO subjects VALUES(202,\'วิศวกรรมเคมี\', 2);</item>
+<item>INSERT INTO subjects VALUES(203,\'วิศวกรรมคอมพิวเตอร์\', 2);</item>
+<item>INSERT INTO subjects VALUES(204,\'วิศวกรรมไฟฟ้า\', 2);</item>
+<item>INSERT INTO subjects VALUES(205,\'เราเหมาะกับวิศวะไหม\', 2);</item>
+<item>INSERT INTO subjects VALUES(206,\'วิศวกรรมสิ่งแวดล้อม\', 2);</item>
+<item>INSERT INTO subjects VALUES(207,\'วิศวกรรมเครื่องกล\', 2);</item>
+<item>INSERT INTO subjects VALUES(208,\'วิศวกรรมเหมืองแร่\', 2);</item>
+<item>INSERT INTO subjects VALUES(209,\'วิศวกรรมโลหการและวัสดุ\', 2);</item>
+<item>INSERT INTO subjects VALUES(210,\'วิศวกรรมปิโตรเลียม\', 2);</item>
+<item>INSERT INTO subjects VALUES(211,\'วิศวกรรมสำรวจ\', 2);</item>
+<item>INSERT INTO videos VALUES(10101,\'1\',\'real_1\', 101);</item>
+<item>INSERT INTO videos VALUES(10102,\'2\',\'real_2\', 101);</item>
+<item>INSERT INTO videos VALUES(10103,\'3\',\'real_3\', 101);</item>
+<item>INSERT INTO videos VALUES(10104,\'4\',\'real_4\', 101);</item>
+<item>INSERT INTO videos VALUES(10105,\'5\',\'real_5\', 101);</item>
+<item>INSERT INTO videos VALUES(10106,\'6\',\'real_6\', 101);</item>
+<item>INSERT INTO videos VALUES(10107,\'7\',\'real_7\', 101);</item>
+<item>INSERT INTO videos VALUES(10201,\'1\',\'stat_1\', 102);</item>
+<item>INSERT INTO videos VALUES(10202,\'2\',\'stat_2\', 102);</item>
+<item>INSERT INTO videos VALUES(10203,\'3\',\'stat_3\', 102);</item>
+<item>INSERT INTO videos VALUES(10301,\'1\',\'imaginary_1\', 103);</item>
+<item>INSERT INTO videos VALUES(10302,\'2\',\'imaginary_2\', 103);</item>
+<item>INSERT INTO videos VALUES(10303,\'3\',\'imaginary_3\', 103);</item>
+<item>INSERT INTO videos VALUES(10401,\'1\',\'prob_1\', 104);</item>
+<item>INSERT INTO videos VALUES(10402,\'2\',\'prob_2\', 104);</item>
+<item>INSERT INTO videos VALUES(10403,\'3\',\'prob_3\', 104);</item>
+<item>INSERT INTO videos VALUES(20101,\'วิศวกรรมโยธา\',\'askeng_ce\', 201);</item>
+<item>INSERT INTO videos VALUES(20201,\'วิศวกรรมเคมี\',\'askeng_che\', 202);</item>
+<item>INSERT INTO videos VALUES(20301,\'วิศวกรรมคอมพิวเตอร์\',\'askeng_cp\', 203);</item>
+<item>INSERT INTO videos VALUES(20401,\'วิศวกรรมไฟฟ้า\',\'askeng_ee\', 204);</item>
+<item>INSERT INTO videos VALUES(20501,\'เราเหมาะกับวิศวะไหม\',\'askeng_eng\', 205);</item>
+<item>INSERT INTO videos VALUES(20601,\'วิศวกรรมสิ่งแวดล้อม\',\'askeng_env\', 206);</item>
+<item>INSERT INTO videos VALUES(20701,\'วิศวกรรมเครื่องกล\',\'askeng_me\', 207);</item>
+<item>INSERT INTO videos VALUES(20801,\'วิศวกรรมเหมืองแร่\',\'askeng_mn\', 208);</item>
+<item>INSERT INTO videos VALUES(20901,\'วิศวกรรมโลหการและวัสดุ\',\'askeng_mt\', 209);</item>
+<item>INSERT INTO videos VALUES(21001,\'วิศวกรรมปิโตรเลียม\',\'askeng_pe\', 210);</item>
+<item>INSERT INTO videos VALUES(21101,\'วิศวกรรมสำรวจ\',\'askeng_sv\', 211);</item>
+<item>INSERT INTO quizzes VALUES(101, 1, \'ถ้านิยามให้ x*y = x+y-2 แล้วเอกลักษณ์ของการดำเนินการนี้คือเท่าไร\', \'choices\', \'e = 2|e = 4|e = -2|ไม่มีเอกลักษณ์\', \'1\', \'ถ้า a*e = a แล้ว จะได้ว่า a+e-2 = a\', \'จาก a*e = a แล้ว จะได้ว่า a+e-2 = a นั่นคือ e = 2 และจาก e*a = a แล้ว จะได้ว่า e+a-2 = a นั่นคือ e = 2 เช่นกัน\');</item>
+<item>INSERT INTO quizzes VALUES(101, 2, \'ให้หา inverse ของ a สำหรับ x*y = x+y-2 เมื่อเอกลักษณ์คือ 2\', \'choices\', \'i = 4+a|i = 2-a|i = 4-a|หา inverse ไม่ได้\', \'3\', \'ลองหา i จาก a*i = e โดยแทน e = 2\', \'จาก a*i = 2 แล้ว จะได้ว่า a+i-2 = 2 นั่นคือ i = 4-a\');</item>
+<item>INSERT INTO quizzes VALUES(101, 3, \'ถ้านิยามให้ x*y = x-y+3 แล้วเอกลักษณ์ของการดำเนินการนี้คือเท่าไร\', \'choices\', \'e = 3|e = -3|e = -6|ไม่มีเอกลักษณ์\', \'4\', \'การตรวจเอกลักษณ์ต้องหาทั้งสองทางคือ a*e = a และ e*a = a\', \'เอกลักษณ์ที่หาได้จาก a*e = a และ e*a = a ได้ค่าไม่เท่ากัน จึงไม่มีเอกลักษณ์\');</item>
+<item>INSERT INTO quizzes VALUES(101, 4, \'หาก a = b จะสรุปได้ว่า b = a นั้นเป็นสมบัติอะไร\', \'choices\', \'สมบัติการสมมาตร|สมบัติการถ่ายทอด|สมบัติการบวกหรือคูณด้วยจำนวนที่เท่ากัน|สมบัติการสะท้อน\', \'1\', \'ไม่มีคำใบ้\', \'\');</item>
+<item>INSERT INTO quizzes VALUES(101, 5, \'ถ้า a = b แล้ว a+c = b+c นั้นเป็นสมบัติอะไร\', \'choices\', \'สมบัติการสมมาตร|สมบัติการถ่ายทอด|สมบัติการบวกด้วยจำนวนที่เท่ากัน|สมบัติการสะท้อน\', \'3\', \'ไม่มีคำใบ้\', \'\');</item>
+<item>INSERT INTO quizzes VALUES(101, 6, \'ข้อใดดคือสมบัติการแจกแจง\', \'choices\', \'a+b = b+a|ab = ba|a+(b+c) = (a+b)+c|a(b+c)=ab+ac\', \'4\', \'ไม่มีคำใบ้\', \'\');</item>
+<item>INSERT INTO quizzes VALUES(101, 7, \'ข้อใดดคือสมบัติการเปลี่ยนกลุ่ม\', \'choices\', \'a+b = b+a|ab = ba|a+(b+c) = (a+b)+c|a(b+c)=ab+ac\', \'3\', \'ไม่มีคำใบ้\', \'\');</item>
+<item>INSERT INTO quizzes VALUES(101, 8, \'เซตในข้อใดมีสมบัติปิดของการบวกและการคูณ\', \'choices\', \'เซตของจำนวนเต็มลบทั้งหมด|เซตของจำนวนเฉพาะบวกที่ไม่ใช่ 2|เซตของจำนวนตรรกยะที่ไม่ใช่จำนวนเต็ม|เซตของจำนวนเต็มที่หารด้วย 4 ลงตัว\', \'4\', \'ไม่มีคำใบ้\', \'\');</item>
+<item>INSERT INTO quizzes VALUES(101, 9, \'ถ้า ห.ร.ม. และ ค.ร.น. ของ x กับ 128 เป็น 16 และ 384 แล้วค่า x เป็นเท่าใด\', \'choices\', \'48|24|12|6\', \'1\', \'ไม่มีคำใบ้\', \'\');</item>
+
+<item>INSERT INTO user_answers VALUES(101, 1, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 2, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 3, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 4, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 5, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 6, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 7, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 8, \'\', \'\');</item>
+<item>INSERT INTO user_answers VALUES(101, 9, \'\', \'\');</item>
+    </string-array>
 
 </resources>

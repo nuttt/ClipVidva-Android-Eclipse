@@ -31,6 +31,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
     private String subject_name;
     private QuestionsDataSource questionsDataSource;
     private UserAnswersDataSource userAnswersDataSource;
+    private Typeface font_text;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
         question_id = extras.getString(ARG_ITEM_ID);
         subject_id = extras.getString(ARG_SUBJECT_ID);
         subject_name = extras.getString(ARG_SUBJECT_NAME);
+        font_text = Typeface.createFromAsset(getAssets(), "fonts/RSU_Regular.ttf");
         Log.v(this.getClass().getName(), "SUBJECT_NAME "+subject_name);
         Log.v(this.getClass().getName(), "ITEM_ID "+question_id);
         Log.v(this.getClass().getName(), "SUBJECT_ID "+subject_id);
@@ -100,10 +102,12 @@ public class QuizItemDetailActivity extends FragmentActivity {
         	
         	// Submit Button Listener
 	        Button submitButton = (Button) findViewById(R.id.submit_button);
+	        submitButton.setTypeface(font_text);
 	        submitButton.setOnClickListener(new QuizButtonOnClickListener());
 	        
         	// Hint Button Listener
 	        Button hintButton = (Button) findViewById(R.id.hint_button);
+	        hintButton.setTypeface(font_text);
 	        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
 	        
 	        // Radio Listener
@@ -146,6 +150,7 @@ public class QuizItemDetailActivity extends FragmentActivity {
     private void setQuestion(){
     	TextView questionView = ((TextView) findViewById(R.id.question_title));
     	questionView.setText(question.getQuestion());
+        questionView.setTypeface(font_text);
     	questionView.postInvalidate();
     }
     
@@ -169,13 +174,16 @@ public class QuizItemDetailActivity extends FragmentActivity {
     
     private void setResult(){
     	String resultText = userAnswer.getResult();
+    	TextView resultView = ((TextView) findViewById(R.id.result));
     	if(resultText.equals("Correct")){
-    		TextView resultView = ((TextView) findViewById(R.id.result));
     		resultView.setText(R.string.icon_correct);
-    		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/fontawesome-webfont.ttf");
-    		resultView.setTypeface(font);
-    		resultView.postInvalidate();
     	}
+    	else{
+    		resultView.setText("");
+    	}
+		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/fontawesome-webfont.ttf");
+		resultView.setTypeface(font);
+		resultView.postInvalidate();
     }
     
     public void getNextQuestion(){

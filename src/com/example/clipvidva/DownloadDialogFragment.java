@@ -25,9 +25,9 @@ public class DownloadDialogFragment extends DialogFragment {
         // Use the Builder class for convenient dialog construction
 		context = getActivity().getApplicationContext();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Download File")
-        	   .setMessage("Do you want to download?")
-               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.download_file)
+        	   .setMessage(R.string.download_desc)
+               .setPositiveButton(R.string.agree, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                 	   
 //                	   String name = Environment.getExternalStorageDirectory().getAbsolutePath();
@@ -60,7 +60,7 @@ public class DownloadDialogFragment extends DialogFragment {
                 	   
                    }
                })
-               .setNegativeButton("No", new DialogInterface.OnClickListener() {
+               .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                 	   Intent intent = new Intent(context , VideoViewer.class);
            				intent.putExtra("VIDEO_FILENAME", videoFilename);
