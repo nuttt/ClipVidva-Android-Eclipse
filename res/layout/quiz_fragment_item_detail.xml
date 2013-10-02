@@ -50,6 +50,17 @@
                 android:text="@string/choice_default" />
         </RadioGroup>
 
+        <EditText
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
         <TextView
             android:id="@+id/hint"
             android:layout_width="wrap_content"
@@ -60,7 +71,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:paddingBottom="20dp"
             android:textColor="#ff0ed300"
             android:textSize="50sp" />
 

@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -55,7 +56,12 @@ public class QuizItemDetailActivity extends FragmentActivity {
         userAnswer = userAnswersDataSource.getUserAnswer(subject_id, question_id);
         
         setTitle(subject_name);
-        render();
+        if( question.getType().equals("choices") ){
+        	render_multiple_question();
+        }
+        else{
+        	render_text_question();        	
+        }
     }
     
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,29 +93,14 @@ public class QuizItemDetailActivity extends FragmentActivity {
         }
 	}
 	
-	private void render(){
+	private void render_multiple_question(){
         if (question != null) {
         	
         	// Set Choices into view
         	setChoices();
             
-            // Set Question text into view
-        	setQuestion();
-        	setHintHidden();
+        	render();
         	
-        	// Set Result text into view
-        	setResult();
-        	
-        	// Submit Button Listener
-	        Button submitButton = (Button) findViewById(R.id.submit_button);
-	        submitButton.setTypeface(font_text);
-	        submitButton.setOnClickListener(new QuizButtonOnClickListener());
-	        
-        	// Hint Button Listener
-	        Button hintButton = (Button) findViewById(R.id.hint_button);
-	        hintButton.setTypeface(font_text);
-	        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
-	        
 	        // Radio Listener
 	        RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);
 	        for (int i = 0; i < choiceGroup.getChildCount(); i++) {
@@ -138,6 +129,51 @@ public class QuizItemDetailActivity extends FragmentActivity {
         }
         
 	}
+
+	private void render_text_question(){
+        if (question != null) {
+        	
+        	// Set TextField into view
+        	setTextField();
+        	
+        	render();	        
+        }
+        
+	}
+	
+	private void render(){
+		
+        // Set Question text into view
+    	setQuestion();
+    	setHintHidden();
+    	
+    	// Set Result text into view
+    	setResult();
+    	
+    	// Submit Button Listener
+        Button submitButton = (Button) findViewById(R.id.submit_button);
+        submitButton.setTypeface(font_text);
+        submitButton.setOnClickListener(new QuizButtonOnClickListener());
+        
+    	// Hint Button Listener
+        Button hintButton = (Button) findViewById(R.id.hint_button);
+        hintButton.setTypeface(font_text);
+        hintButton.setOnClickListener(new QuizHintButtonOnClickListener());
+		
+	}
+
+	
+	private void setTextField(){
+		String answer = userAnswer.getAnswer();
+		if( answer.length() > 0 ){
+			EditText editText = (EditText) findViewById(R.id.text_field);
+			Log.v(this.getClass().getName(), "setTextField "+answer);
+			editText.setText(answer);
+			editText.postInvalidate();
+		}
+		RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);
+		choiceGroup.setVisibility(View.GONE);
+	}
 	
     private void setChoices(){
         RadioGroup choiceGroup = (RadioGroup) findViewById(R.id.choices);
@@ -145,6 +181,8 @@ public class QuizItemDetailActivity extends FragmentActivity {
         for (int i = 0; i < choiceGroup.getChildCount(); i++) {
             ((RadioButton) choiceGroup.getChildAt(i)).setText(choices[i]);
         }
+        EditText editText = (EditText) findViewById(R.id.text_field);
+        editText.setVisibility(View.GONE);
     }
     
     private void setQuestion(){
@@ -176,10 +214,11 @@ public class QuizItemDetailActivity extends FragmentActivity {
     	String resultText = userAnswer.getResult();
     	TextView resultView = ((TextView) findViewById(R.id.result));
     	if(resultText.equals("Correct")){
+    		resultView.setVisibility(View.VISIBLE);
     		resultView.setText(R.string.icon_correct);
     	}
     	else{
-    		resultView.setText("");
+    		resultView.setVisibility(View.GONE);
     	}
 		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/fontawesome-webfont.ttf");
 		resultView.setTypeface(font);
@@ -236,7 +275,9 @@ public class QuizItemDetailActivity extends FragmentActivity {
 		public void onClick(View view) {
 	    	Log.v(this.getClass().getName(), "Choice entered: "+ Integer.toString(choice));
 	    	Log.v(this.getClass().getName(), "Answer: "+ question.getAnswer());
-	    	if (isCorrectChoice()) {
+	    	String answer = getAnswer();
+	    	userAnswer.setAnswer(answer);
+	    	if (isCorrectChoice(answer)) {
 	    		userAnswer.setResult("Correct");
 	    		Log.v(this.getClass().getName(), "Correct!");
 	    		CorrectDialogFragment correctDialog = new CorrectDialogFragment();
@@ -253,14 +294,24 @@ public class QuizItemDetailActivity extends FragmentActivity {
 	    	}
     		userAnswersDataSource.editAnswer(userAnswer.getSubject_id(), 
 					 userAnswer.getQuestion_id(), 
-					 Integer.toString(choice), 
+					 userAnswer.getAnswer(), 
 					 userAnswer.getResult());
 	    	setResult();
 		}
 		
-		private boolean isCorrectChoice(){
-			if (choice == Integer.parseInt(question.getAnswer())){
-				return true;
+		public String getAnswer(){
+			if( question.getType().equals("choices")){
+				return choice+"";
+			}
+			else{
+				EditText editText = (EditText) findViewById(R.id.text_field);
+				return editText.getText().toString();
+			}
+		}
+		
+		private boolean isCorrectChoice(String answer){
+			if( answer.equals(question.getAnswer()) ){
+				return true;				
 			}
 			return false;
 		}

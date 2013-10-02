@@ -41,7 +41,7 @@ public class ClipVidvaDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_ANSWERS_COL_RESULT = "result";
 
     private static final String DATABASE_NAME = "clipvidva.db";
-    private static final int DATABASE_VERSION = 41;
+    private static final int DATABASE_VERSION = 47;
 
     private Context context;
 
