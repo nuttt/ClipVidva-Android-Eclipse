@@ -47,11 +47,16 @@ public class VideoListActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
+			DownloadDialogFragment downloadDialogFragment = new DownloadDialogFragment();
 			Video clicked = videosListAdapter.getItem(arg2);
 			String videoFileName = clicked.getFile();
-			Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
-			intent.putExtra("VIDEO_FILENAME", videoFileName);
-			startActivity(intent);
+			downloadDialogFragment.setVideoFilename(videoFileName);
+			
+			downloadDialogFragment.show(getFragmentManager(), "donwloadDialogFragment");
+			
+//			Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
+//			intent.putExtra("VIDEO_FILENAME", videoFileName);
+//			startActivity(intent);
 		}
 	}
 	

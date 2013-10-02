@@ -54,10 +54,16 @@ public class SubjectListActivity extends Activity {
 			int videoNum = videoDataSource.getVideosNum(subjectId);
 			if(videoNum == 1){
 				ArrayList<Video> videos = videoDataSource.getAllVideosIn(subjectId);
-				Video video = videos.get(0); 
-				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
-				intent.putExtra("VIDEO_FILENAME", video.getFile());
-				startActivity(intent);
+				Video video = videos.get(0);
+				
+				DownloadDialogFragment downloadDialogFragment = new DownloadDialogFragment();
+				String videoFileName = video.getFile();
+				downloadDialogFragment.setVideoFilename(videoFileName);
+				
+				downloadDialogFragment.show(getFragmentManager(), "donwloadDialogFragment");
+//				Intent intent = new Intent(arg0.getContext(), VideoViewer.class);
+//				intent.putExtra("VIDEO_FILENAME", video.getFile());
+//				startActivity(intent);
 			} else if(videoNum > 1){
 				Intent intent = new Intent(arg0.getContext(), VideoListActivity.class);
 				intent.putExtra("SUBJECT_ID", subjectId+"");
