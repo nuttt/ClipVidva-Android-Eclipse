@@ -1,6 +1,7 @@
 package com.example.clipvidva.quizzes;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +29,8 @@ public class QuizSubjectListAdapter extends MyListAdapter<Subject> {
         Log.v(this.getClass().getName(), "Set Adapter3");
         TextView textView = (TextView) view.findViewById(R.id.quiz_subject_text);
         textView.setText(subject.getName());
-
+        Typeface font_text = Typeface.createFromAsset(context.getAssets(), "fonts/RSU_Regular.ttf");
+        textView.setTypeface(font_text);
         return view;
     }
 

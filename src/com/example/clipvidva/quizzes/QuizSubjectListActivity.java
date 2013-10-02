@@ -46,11 +46,15 @@ public class QuizSubjectListActivity extends FragmentActivity {
         
         // Set title bar
         setActionBarTitle(name);
+        Log.v(this.getClass().getName(), "progressbar1");
         progressBar = (ProgressBar)findViewById(R.id.quiz_subject_score);
-        progressBar.getProgressDrawable().setColorFilter(Color.RED, Mode.SRC_IN);
+        Log.v(this.getClass().getName(), "progressbar2");
+        //progressBar.getProgressDrawable().setColorFilter(Color.RED, Mode.OVERLAY);
+        Log.v(this.getClass().getName(), "progressbar3");
         listView = (ListView)findViewById(R.id.quiz_subject_list_view);
         
         // Get subjects
+        Log.v(this.getClass().getName(), "get subjects");
         subjectsDataSource = new SubjectsDataSource(getApplicationContext());
         subjectsDataSource.open();
         subjects = subjectsDataSource.getAllSubjectsIn(category_id);
@@ -59,23 +63,22 @@ public class QuizSubjectListActivity extends FragmentActivity {
         Log.v(this.getClass().getName(), "userAnswersDataSource");
         userAnswersDataSource = new UserAnswersDataSource(getApplicationContext());
         userAnswersDataSource.open();
-        
-        Log.v(this.getClass().getName(), "QuizSubjectListAdapter");
+          
+    }
+    
+    public void onResume(){
+    	super.onResume();
 		quizSubjectListAdapter = new QuizSubjectListAdapter();
-		Log.v(this.getClass().getName(), "Resume Activity222");
 	    for(int i=0; i<subjects.size(); i++){
 	    	Subject subject = subjects.get(i);
 	    	quizSubjectListAdapter.addItem(subject);
 	    	int numberOfQuestions = userAnswersDataSource.getNumberOfQuestions(subject.getId());
 	    	int numberOfCorrectAnswers = userAnswersDataSource.getNumberOfCorrectAnswers(subject.getId());
-	    	Log.v(this.getClass().getName(), "VEE "+subjects.get(i).getName()+" "+numberOfQuestions+" "+numberOfCorrectAnswers);
 	    }
-	    Log.v(this.getClass().getName(), "Set Adapter");
 	    listView.setAdapter(quizSubjectListAdapter);
-	    Log.v(this.getClass().getName(), "Set Listener");
 	    listView.setOnItemClickListener(new SubjectItemClickListener());
 	    Log.v(this.getClass().getName(), "Notify");
-	    quizSubjectListAdapter.notifyDataSetChanged();    
+	    quizSubjectListAdapter.notifyDataSetChanged();  
     }
     
 /*
