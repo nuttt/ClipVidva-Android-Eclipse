@@ -29,8 +29,7 @@
         </activity>
         <activity
             android:name="com.example.clipvidva.CategoryListActivity"
-            android:label="Categories"
-            android:parentActivityName=".Splash" >
+            android:label="Categories">
         </activity>
         <!--
         <activity
@@ -45,8 +44,7 @@
         -->
         <activity
             android:name="com.example.clipvidva.SubjectListActivity"
-            android:label="Subjects"
-            android:parentActivityName=".CategoryListActivity" >
+            android:label="Subjects" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CategoryListActivity" />
@@ -57,8 +55,7 @@
         </activity>
         <activity
             android:name="com.example.clipvidva.ItemDetailActivity"
-            android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity" >
+            android:label="@string/title_item_detail" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ItemListActivity" />
@@ -67,16 +64,14 @@
         <!-- QUIZZES -->
         <activity
             android:name="com.example.clipvidva.quizzes.QuizCategoryListActivity"
-            android:label="@string/title_quiz"
-            android:parentActivityName=".Splash" >
+            android:label="@string/title_quiz" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Splash" />
         </activity>
         <activity
             android:name="com.example.clipvidva.quizzes.QuizSubjectListActivity"
-            android:label="Quiz Subjects"
-            android:parentActivityName=".Splash" >
+            android:label="Quiz Subjects" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Splash" />
@@ -91,8 +86,7 @@
         </activity>
         <activity
             android:name="com.example.clipvidva.quizzes.QuizItemDetailActivity"
-            android:label="Question"
-            android:parentActivityName="com.example.clipvidva.quizzes.QuizQuestionListActivity" >
+            android:label="Question" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.clipvidva.quizzes.QuizQuestionListActivity" />

@@ -8,7 +8,6 @@
         android:id="@+id/video_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-    	android:background="@drawable/wood_pattern"
         android:numColumns="3" >
     </GridView>
 
